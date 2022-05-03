@@ -1,7 +1,12 @@
 package com.lu.algo.tree;
 
+
+import com.sun.istack.internal.Nullable;
+
 import java.util.LinkedList;
+import java.util.Optional;
 import java.util.Stack;
+import java.util.function.Consumer;
 
 /**
  * @author sheldon
@@ -28,14 +33,7 @@ public class q226 {
         return root;
     }
 
-    public TreeNode invertTreeDFS(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-
-        }
-    }
-
+    @Nullable
     public TreeNode invertTreeBFS(TreeNode root){
         LinkedList<TreeNode> queue = new LinkedList<>();
         if (root == null) {
@@ -56,4 +54,5 @@ public class q226 {
         }
         return root;
     }
+
 }

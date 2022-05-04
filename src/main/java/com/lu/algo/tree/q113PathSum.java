@@ -1,7 +1,7 @@
 package com.lu.algo.tree;
 
-import com.google.common.collect.Lists;
-
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -10,14 +10,40 @@ import java.util.List;
  */
 public class q113PathSum {
 
-    public class TreeNode{
+    public LinkedList path;
+    public List<List<Integer>> result;
+
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        this.result = new ArrayList<>();
+        this.path = new LinkedList();
+        travesal(root, targetSum);
+        return result;
+    }
+
+    public void travesal(TreeNode root, int targetSum) {
+        if (root == null) {
+            return;
+        }
+        path.offer(root.val);
+        targetSum -= root.val;
+        if (root.right == null && root.left == null) {
+            if (targetSum == 0) {
+                result.add(new LinkedList<>(path));
+            }
+        }
+        if (root.left != null) {
+            travesal(root.left, targetSum);
+        }
+        if (root.right != null) {
+            travesal(root.right, targetSum);
+        }
+        path.removeLast();
+    }
+
+    public class TreeNode {
         public TreeNode right;
         public TreeNode left;
         public int val;
-    }
-
-    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        return Lists.newArrayList();
     }
 
 }

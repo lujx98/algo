@@ -1,4 +1,4 @@
-package com.lu.algo.tree;
+package com.lu.algo.tree.bts;
 
 /**
  * @author sheldon

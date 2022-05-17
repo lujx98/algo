@@ -17,7 +17,7 @@ public class q93RestoreIpAddresses {
         System.out.println(restoreIpAddresses("25525511135"));
     }
 
-    private LinkedList<String> res = new LinkedList<>();
+    private int pointCount = 0;
     private List<String> returnList = new ArrayList<>();
 
     public List<String> restoreIpAddresses(String s) {
@@ -26,20 +26,50 @@ public class q93RestoreIpAddresses {
     }
 
     private void backTracking(String s, int start) {
-        if (res.size() == 4) {
-            String[] strings = res.toArray(new String[res.size()]);
-            String join = String.join(".", strings);
-
-            if (join.length() == s.length() - 3) {
-                returnList.add(join);
+        if (pointCount == 3) {
+            if (isValid(s, start, s.length() - 1)) {
+                returnList.add(s);
             }
             return;
         }
-        for (int i = start + 1; i < s.length() - 1 && start - i <= 3; i++) {
-            res.add(s.substring(start, i));
-            backTracking(s, start + 1);
-            res.removeLast();
+        for (int i = start; i < s.length() - 1 && start - i <= 3; i++) {
+            if (isValid(s, start, i)) {
+                //在str的后⾯插⼊⼀个逗点
+                s = s.substring(0, i + 1) + "." + s.substring(i + 1);
+                pointCount++;
+                // 插⼊逗点之后下⼀个⼦串的起始位置为i+2
+                backTracking(s, i + 2);
+                // 回溯
+                pointCount--;
+                // 回溯删掉逗点
+                s = s.substring(0, i + 1) + s.substring(i + 2);
+            } else {
+                break;
+            }
         }
+    }
+
+    private Boolean isValid(String s, int start, int end) {
+        if (start > end) {
+            return false;
+        }
+        // 0开头的数字不合法
+        if (s.charAt(start) == '0' && start != end) {
+            return false;
+        }
+        int num = 0;
+        for (int i = start; i <= end; i++) {
+            // 遇到⾮数字字符不合法
+            if (s.charAt(i) > '9' || s.charAt(i) < '0') {
+                return false;
+            }
+            num = num * 10 + (s.charAt(i) - '0');
+            // 如果⼤于255了不合法
+            if (num > 255) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

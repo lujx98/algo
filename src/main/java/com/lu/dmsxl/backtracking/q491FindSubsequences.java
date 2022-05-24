@@ -18,7 +18,7 @@ public class q491FindSubsequences {
     }
 
     private List<List<Integer>> returnList = new ArrayList();
-    private LinkedList path = new LinkedList();
+    private LinkedList<Integer> path = new LinkedList();
 
     public List<List<Integer>> findSubsequences(int[] nums) {
         backTracking(nums, 0);
@@ -26,13 +26,16 @@ public class q491FindSubsequences {
     }
 
     private void backTracking(int[] nums, int startIndex) {
-        //todo: unfinished
-        if (startIndex > 1 && nums[startIndex - 1] < nums[startIndex - 2]) {
+        if (path.size() > 1) {
             returnList.add(new ArrayList<>(path));
-            return;
         }
+        int[] used = new int[201];
         for (int i = startIndex; i < nums.length; i++) {
+            if (((!path.isEmpty() && nums[i] < path.peekLast()) || used[nums[i] + 100] == 1)) {
+                continue;
+            }
             path.add(nums[i]);
+            used[nums[i] + 100] = 1;
             backTracking(nums, i + 1);
             path.removeLast();
         }

@@ -21,11 +21,11 @@ public class q46Permute {
     private final List<List<Integer>> resturnList = new ArrayList<List<Integer>>();
 
     public List<List<Integer>> permute(int[] nums) {
-        backTracking(nums, 0);
+        backTracking(nums);
         return resturnList;
     }
 
-    private void backTracking(int[] nums, int startIndex) {
+    private void backTracking(int[] nums) {
         if (nums.length == path.size()) {
             resturnList.add(new ArrayList<>(path));
             return;
@@ -36,7 +36,7 @@ public class q46Permute {
             } else {
                 continue;
             }
-            backTracking(nums, i + 1);
+            backTracking(nums);
             path.removeLast();
         }
     }

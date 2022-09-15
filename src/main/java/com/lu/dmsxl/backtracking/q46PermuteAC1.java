@@ -7,10 +7,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * AC
+ *
  * @author sheldon
  * @date 2022-05-24
  */
-public class q46Permute {
+public class q46PermuteAC1 {
 
     @Test
     public void test() {

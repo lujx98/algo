@@ -10,7 +10,7 @@ import java.util.List;
  * @author sheldon
  * @date 2022-05-04
  */
-public class q77Combine {
+public class q77CombineAC1 {
 
     @Test
     public void test() {

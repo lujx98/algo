@@ -23,18 +23,6 @@ public class q17LetterCombinations {
     }
 
     private void backTracking(String digits, String[] numString, int digitsIndex) {
-//        if (strB.length() == digits.length()) {
-//            result.add(strB.toString());
-//            return;
-//        }
-//
-//        String str = numString[digits.charAt(digitsIndex) - '0'];
-//        for (int i = 0; i < str.toCharArray().length; i++) {
-//            strB.append(str.charAt(i));
-//            backTracking(digits, numString, digitsIndex + 1);
-//            strB.deleteCharAt(strB.length() - 1);
-//        }
-
         if (strB.length() == digits.length()) {
             result.add(strB.toString());
             return;

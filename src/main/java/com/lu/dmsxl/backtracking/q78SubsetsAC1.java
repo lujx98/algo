@@ -8,7 +8,7 @@ import java.util.List;
  * @author sheldon
  * @date 2022-05-16
  */
-public class q78Subsets {
+public class q78SubsetsAC1 {
 
     private List<List<Integer>> resList = new ArrayList<List<Integer>>();
     private LinkedList<Integer> res = new LinkedList<Integer>();

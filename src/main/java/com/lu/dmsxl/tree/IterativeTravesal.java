@@ -1,5 +1,7 @@
 package com.lu.dmsxl.tree;
 
+import com.lu.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class IterativeTravesal {
         if (root == null) {
             return;
         }
-        result.add(root.value);
+        result.add(root.val);
         preorder(root.left, result);
         preorder(root.right, result);
     }
@@ -35,7 +37,7 @@ public class IterativeTravesal {
             return;
         }
         inorder(root.left, result);
-        result.add(root.value);
+        result.add(root.val);
         inorder(root.right, result);
     }
 
@@ -51,7 +53,7 @@ public class IterativeTravesal {
         }
         postorder(root.left, result);
         postorder(root.right, result);
-        result.add(root.value);
+        result.add(root.val);
     }
 
 }

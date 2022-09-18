@@ -1,7 +1,5 @@
 package com.lu.algo.tree;
 
-import com.lu.dmsxl.tree.TreeNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

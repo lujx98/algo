@@ -1,5 +1,7 @@
 package com.lu.dmsxl.tree;
 
+import com.lu.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -30,7 +32,7 @@ public class UniversalTravesal {
             }else {
                 stack.pop();
                 TreeNode val = stack.pop();
-                result.add(val.value);
+                result.add(val.val);
             }
         }
         return result;

@@ -1,6 +1,6 @@
 package com.lu.dmsxl.tree;
 
-import sun.reflect.generics.tree.Tree;
+import com.lu.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +18,7 @@ public class Travesal {
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode pop = stack.pop();
-            result.add(pop.value);
+            result.add(pop.val);
             if (pop.right != null) {
                 stack.push(pop.left);
             }
@@ -39,7 +39,7 @@ public class Travesal {
                 currentNode = currentNode.left;
             } else {
                 currentNode = stack.pop();
-                result.add(currentNode.value);
+                result.add(currentNode.val);
                 currentNode = currentNode.right;
             }
         }
@@ -51,7 +51,7 @@ public class Travesal {
         Stack<TreeNode> stack = new Stack<>();
         while (!stack.isEmpty()) {
             TreeNode pop = stack.pop();
-            result.add(pop.value);
+            result.add(pop.val);
             if (pop.left != null) {
                 stack.push(pop.left);
             }

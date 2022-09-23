@@ -6,10 +6,29 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-05-31
  */
-public class q63UniquePathsWithObstacles {
+public class DP_q63_2_UniquePathsWithObstacles {
     @Test
     public void test() {
 
+    }
+
+    public int uniquePaths1(int[][] obstacleGrid) {
+        int m = obstacleGrid.length, n = obstacleGrid[0].length;
+        int[] ints = new int[n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (obstacleGrid[m][n] == 1) {
+                    ints[j] = 0;
+                    continue;
+                }
+                if (j == 0 || i == 0) {
+                    ints[j] = 1;
+                    continue;
+                }
+                ints[j] += ints[j - 1];
+            }
+        }
+        return ints[n - 1];
     }
 
     public int uniquePathsWithObstacles1(int[][] obstacleGrid) {

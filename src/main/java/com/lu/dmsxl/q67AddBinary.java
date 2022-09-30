@@ -1,6 +1,5 @@
 package com.lu.dmsxl;
 
-import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 
 /**

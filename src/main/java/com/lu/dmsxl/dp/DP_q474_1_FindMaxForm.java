@@ -8,7 +8,26 @@ import org.junit.Test;
  */
 public class DP_q474_1_FindMaxForm {
 
-    @Test
+    public int findMaxForm1(String[] strs, int m, int n) {
+
+
+        int[][] ints = new int[m + 1][n + 1];
+        for (String str : strs) {
+            int zeroNumber = 0;
+            int oneNumber = 0;
+            for (char c : str.toCharArray()) {
+                if (c=='0'){
+                    zeroNumber++;
+                }else {
+                    oneNumber++;
+                }
+            }
+            
+
+        }
+        return ints[m][n];
+    }
+
     public int findMaxForm(String[] strs, int m, int n) {
         int[][] ints = new int[m+1][n+1];
         for (String str : strs) {

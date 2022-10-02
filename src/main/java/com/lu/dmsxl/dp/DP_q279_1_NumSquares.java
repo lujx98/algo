@@ -16,6 +16,19 @@ public class DP_q279_1_NumSquares {
         System.out.println(numSquares(12));
     }
 
+    public int numSquares1(int n) {
+        int[] ints = new int[n + 1];
+        ints[0] = 1;
+        for (int i = 0; i * i < n; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i * i <= j) {
+                    ints[j] = Math.min(ints[j], ints[j - i * i]);
+                }
+            }
+        }
+        return ints[n];
+    }
+
     public int numSquares(int n) {
         int max = Integer.MAX_VALUE;
         int[] dp = new int[n + 1];

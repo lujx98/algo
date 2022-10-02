@@ -1,6 +1,5 @@
 package com.lu.algo.dynamic;
 
-import com.sun.xml.internal.fastinfoset.tools.XML_SAX_StAX_FI;
 
 /**
  * @author sheldon

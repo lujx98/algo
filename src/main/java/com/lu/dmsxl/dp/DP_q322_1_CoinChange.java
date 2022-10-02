@@ -6,6 +6,13 @@ package com.lu.dmsxl.dp;
  */
 public class DP_q322_1_CoinChange {
 
+    public int coinChange1(int[] coins, int amount){
+
+
+
+        return 0;
+    }
+
     public int coinChange(int[] coins, int amount) {
         int max = Integer.MAX_VALUE;
         int[] dp = new int[amount + 1];

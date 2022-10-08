@@ -1,6 +1,6 @@
 package com.lu.dmsxl.dp;
 
-import com.lu.TreeNode;
+import com.lu.structure.TreeNode;
 
 /**
  * @author sheldon

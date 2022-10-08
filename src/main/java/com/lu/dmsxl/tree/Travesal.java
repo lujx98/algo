@@ -1,6 +1,6 @@
 package com.lu.dmsxl.tree;
 
-import com.lu.TreeNode;
+import com.lu.structure.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Collections;

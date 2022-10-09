@@ -9,7 +9,7 @@ import org.junit.Test;
 public class DP_q63_2_UniquePathsWithObstacles {
     @Test
     public void test() {
-
+        System.out.println(uniquePaths1(new int[][]{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}));
     }
 
     public int uniquePaths1(int[][] obstacleGrid) {
@@ -17,11 +17,11 @@ public class DP_q63_2_UniquePathsWithObstacles {
         int[] ints = new int[n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (obstacleGrid[m][n] == 1) {
+                if (obstacleGrid[i][j] == 1) {
                     ints[j] = 0;
                     continue;
                 }
-                if (j == 0 || i == 0) {
+                if ((j == 0 || i == 0)) {
                     ints[j] = 1;
                     continue;
                 }

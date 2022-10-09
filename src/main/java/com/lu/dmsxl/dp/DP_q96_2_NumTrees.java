@@ -4,7 +4,7 @@ package com.lu.dmsxl.dp;
  * @author sheldon
  * @date 2022-05-31
  */
-public class q96NumTrees {
+public class DP_q96_2_NumTrees {
 
     public int numTrees(int n) {
         int[] ints = new int[n+1];

@@ -22,7 +22,7 @@ public class DP_q474_1_FindMaxForm {
                     oneNumber++;
                 }
             }
-            
+
 
         }
         return ints[m][n];

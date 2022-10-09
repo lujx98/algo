@@ -4,7 +4,18 @@ package com.lu.dmsxl.dp;
  * @author sheldon
  * @date 2022-05-31
  */
-public class q343IntegerBreak {
+public class DP_q343_2_IntegerBreak {
+
+    public int integerBreak1(int n) {
+        int[] ints = new int[n + 1];
+        ints[2] = 1;
+        for (int i = 0; i <= n; i++) {
+            for (int j = 1; j <= i - j; j++) {
+                ints[i] = Math.max(ints[i], Math.max(j * (i - j), j * ints[i - j]));
+            }
+        }
+        return ints[n];
+    }
 
     public int integerBreak(int n) {
         if (n <= 2) {

@@ -17,7 +17,7 @@ public class Tree_q101_2_IsSymmetric {
 
     @Test
     public void test(){
-        System.out.println(isSymmetric1(TreeUtils.makeTree("[1,2,2,3,4,4,3]")));
+        System.out.println(isSymmetric(TreeUtils.makeTree("[1,2,2,null,3,null,3]")));
     }
 
     public boolean isSymmetric1(TreeNode root) {
@@ -50,11 +50,16 @@ public class Tree_q101_2_IsSymmetric {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
-                ints.add(poll.val);
-                if (poll.left != null) queue.offer(poll.left);
-                if (poll.right != null) queue.offer(poll.right);
+                if (poll!=null){
+                    ints.add(poll.val);
+                }else {
+                    ints.add(null);
+                    continue;
+                }
+                queue.offer(poll.left);
+                queue.offer(poll.right);
             }
-            if (isSymmetric(ints)) {
+            if (!isSymmetric(ints)) {
                 return false;
             }
         }

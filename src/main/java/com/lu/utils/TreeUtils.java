@@ -56,7 +56,7 @@ public class TreeUtils {
         ArrayList<Integer> objects = new ArrayList<>();
         String[] split = substring.split(",");
         for (String s : split) {
-            if (s == "null") {
+            if (s.equals("null")) {
                 objects.add(null);
                 continue;
             }

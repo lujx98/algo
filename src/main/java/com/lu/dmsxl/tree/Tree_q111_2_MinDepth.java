@@ -1,4 +1,6 @@
-package com.lu.algo.tree;
+package com.lu.dmsxl.tree;
+
+import com.lu.structure.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,11 +10,12 @@ import java.util.Queue;
  * @author sheldon
  * @date 2022-04-05
  */
-public class q111 {
-    public class TreeNode {
-        public Integer val;
-        public TreeNode right;
-        public TreeNode left;
+public class Tree_q111_2_MinDepth {
+
+    public int minDepth1(TreeNode root){
+
+
+        return 0;
     }
 
     //todolu:

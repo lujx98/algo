@@ -1,4 +1,6 @@
-package com.lu.algo.tree;
+package com.lu.dmsxl.tree;
+
+import com.lu.structure.TreeNode;
 
 import java.util.LinkedList;
 
@@ -6,13 +8,28 @@ import java.util.LinkedList;
  * @author sheldon
  * @date 2022-04-19
  */
-public class q222 {
+public class Tree_q222_1_CountNodes {
 
+    public int countNodes1(TreeNode root){
+        if (root == null) {
+            return 0;
+        }
+        int left = getDepth(root.left);
+        int right = getDepth(root.right);
+        if (left == right){
+            return 1;
+        }else {
+            return 0;
+        }
+    }
 
-    public class TreeNode{
-        public TreeNode left;
-        public TreeNode right;
-        public int val;
+    private int getDepth(TreeNode root) {
+        int depth = 0;
+        while (root != null) {
+            root = root.left;
+            depth++;
+        }
+        return depth;
     }
 
     public int countNodes(TreeNode root) {

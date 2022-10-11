@@ -10,12 +10,24 @@ import java.util.Queue;
  * @author sheldon
  * @date 2022-04-05
  */
-public class Tree_q111_2_MinDepth {
+public class Tree_q111_1_MinDepth {
 
     public int minDepth1(TreeNode root){
+        if (root == null) {
+            return 0;
+        }
 
+        int rightDepth = minDepth1(root.right);
+        int leftDepth = minDepth1(root.left);
 
-        return 0;
+        if (root.right == null) {
+            return rightDepth + 1;
+        }
+
+        if (root.left == null) {
+            return leftDepth + 1;
+        }
+        return Math.min(rightDepth, leftDepth) + 1;
     }
 
     //todolu:

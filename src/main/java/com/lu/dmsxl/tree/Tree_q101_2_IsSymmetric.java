@@ -2,7 +2,6 @@ package com.lu.dmsxl.tree;
 
 import com.lu.structure.TreeNode;
 import com.lu.utils.TreeUtils;
-import javafx.util.Pair;
 import org.junit.Test;
 
 import java.util.ArrayList;

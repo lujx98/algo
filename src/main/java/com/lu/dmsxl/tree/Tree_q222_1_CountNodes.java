@@ -17,9 +17,9 @@ public class Tree_q222_1_CountNodes {
         int left = getDepth(root.left);
         int right = getDepth(root.right);
         if (left == right){
-            return 1;
+            return countNodes1(root.right) + (1 << left);
         }else {
-            return 0;
+            return countNodes1(root.left) + (1 << right);
         }
     }
 

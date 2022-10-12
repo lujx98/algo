@@ -21,6 +21,7 @@ public class TreeUtils {
      */
     public static TreeNode makeTree(String str) {
         String substring = str;
+        substring.trim();
         if (str.startsWith("[") && str.endsWith("]")) {
             substring = str.substring(1, str.length() - 1);
         }

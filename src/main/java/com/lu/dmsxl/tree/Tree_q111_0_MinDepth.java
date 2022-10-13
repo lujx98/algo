@@ -10,7 +10,7 @@ import java.util.Queue;
  * @author sheldon
  * @date 2022-04-05
  */
-public class Tree_q111_1_MinDepth {
+public class Tree_q111_0_MinDepth {
 
     public int minDepth1(TreeNode root){
         if (root == null) {

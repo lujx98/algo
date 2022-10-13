@@ -11,7 +11,7 @@ import java.util.Queue;
  * @author sheldon
  * @date 2022-04-05
  */
-public class Tree_q104_1_MaxDepth {
+public class Tree_q104_0_MaxDepth {
 
     @Test
     public void test(){

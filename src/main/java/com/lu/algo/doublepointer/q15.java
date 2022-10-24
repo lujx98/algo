@@ -9,6 +9,7 @@ import java.util.List;
  * @date 2022-03-26
  */
 public class q15 {
+
     public static void main(String[] args) {
         System.out.println(threeSum(new int[]{1,-1,-1,0}));
     }

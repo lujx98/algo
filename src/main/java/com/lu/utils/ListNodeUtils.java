@@ -9,7 +9,7 @@ import org.junit.Test;
  */
 public class ListNodeUtils {
 
-    public ListNode makeLinked(String a) {
+    public static ListNode makeLinked(String a) {
         a = a.trim();
         if (a.startsWith("[")) {
             a = a.substring(1, a.length() - 1);

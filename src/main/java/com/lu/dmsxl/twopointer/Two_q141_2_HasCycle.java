@@ -1,4 +1,4 @@
-package com.lu.dmsxl.uncatagorized;
+package com.lu.dmsxl.twopointer;
 
 import com.lu.structure.ListNode;
 
@@ -6,7 +6,7 @@ import com.lu.structure.ListNode;
  * @author sheldon
  * @date 2022-09-18
  */
-public class Dpointer_q141_2_HasCycle {
+public class Two_q141_2_HasCycle {
 
     public boolean hasCycle(ListNode head) {
         if (head == null) {

@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-09-19
  */
-public class String_q168_2_TitleToNumber {
+public class String_Two_q168_2_TitleToNumber {
 
     @Test
     public void test() {

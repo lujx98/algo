@@ -4,7 +4,7 @@ package com.lu.dmsxl.dp;
  * @author sheldon
  * @date 2022-06-05
  */
-public class DP_q1049_1_LastStoneWeightII {
+public class DP_14_q1049_1_LastStoneWeightII {
 
     public int lastStoneWeightII(int[] stones) {
         int sum = 0;

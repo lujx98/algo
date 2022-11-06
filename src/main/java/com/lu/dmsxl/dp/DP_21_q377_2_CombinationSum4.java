@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-09-30
  */
-public class DP_q377_2_CombinationSum4 {
+public class DP_21_q377_2_CombinationSum4 {
 
     @Test
     public void test() {

@@ -4,24 +4,32 @@ package com.lu.dmsxl.dp;
  * @author sheldon
  * @date 2022-06-05
  */
-public class DP_q494_0_FindTargetSumWays {
+public class DP_16_q494_1_FindTargetSumWays {
 
     public int findTargetSumWays(int[] nums, int target) {
-        int sum = 0;
-        for (int i = 0; i < nums.length; i++) sum += nums[i];
-        if ((target + sum) % 2 != 0) return 0;
-        int size = (target + sum) / 2;
-        if (size < 0) size = -size;
 
-        int[] dp = new int[size + 1];
-        dp[0] = 1;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = size; j >= nums[i]; j--) {
-                dp[j] += dp[j - nums[i]];
-            }
-        }
-        return dp[size];
+
+
+
+        return 0;
     }
+
+//    public int findTargetSumWays(int[] nums, int target) {
+//        int sum = 0;
+//        for (int i = 0; i < nums.length; i++) sum += nums[i];
+//        if ((target + sum) % 2 != 0) return 0;
+//        int size = (target + sum) / 2;
+//        if (size < 0) size = -size;
+//
+//        int[] dp = new int[size + 1];
+//        dp[0] = 1;
+//        for (int i = 0; i < nums.length; i++) {
+//            for (int j = size; j >= nums[i]; j--) {
+//                dp[j] += dp[j - nums[i]];
+//            }
+//        }
+//        return dp[size];
+//    }
 
 //    public int findTargetSumWays1(int[] nums, int target) {
 //        int sum = 0;

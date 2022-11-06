@@ -4,7 +4,25 @@ package com.lu.dmsxl.dp;
  * @author sheldon
  * @date 2022-06-05
  */
-public class DP_q416_1_CanPartition {
+public class DP_13_q416_1_CanPartition {
+
+    public boolean canPartition2(int[] nums) {
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        if (sum % 2 == 1) {
+            return false;
+        }
+        int target = sum / 2;
+        int[] dp = new int[target + 1];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = target; j > nums[i]; j--) {
+                dp[j] = Math.max(dp[j], dp[j-nums[i]] + nums[i]);
+            }
+        }
+        return dp[target] == target;
+    }
 
     public boolean canPartition1(int[] nums) {
         int sum = 0;

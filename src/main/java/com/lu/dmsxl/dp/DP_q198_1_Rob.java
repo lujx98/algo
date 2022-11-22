@@ -12,8 +12,16 @@ import java.util.Objects;
 public class DP_q198_1_Rob {
 
     @Test
-    public void test(){
-        System.out.println(rob(new int[]{1,2}));
+    public void test() {
+        System.out.println(rob(new int[]{1, 2}));
+    }
+
+    public int rob1(int[] nums) {
+        int[] dp = new int[nums.length + 1];
+        dp[0] = 0;
+
+
+        return dp[nums.length];
     }
 
     /**
@@ -35,7 +43,7 @@ public class DP_q198_1_Rob {
         dp[1] = nums[0];
         dp[2] = Math.max(nums[0], nums[1]);
         for (int i = 3; i <= nums.length; i++) {
-            dp[i] = Math.max(dp[i - 2] + nums[i-1], dp[i - 1]);
+            dp[i] = Math.max(dp[i - 2] + nums[i - 1], dp[i - 1]);
         }
         return dp[nums.length];
     }

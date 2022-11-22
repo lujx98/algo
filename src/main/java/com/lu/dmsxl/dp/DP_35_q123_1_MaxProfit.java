@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-10-03
  */
-public class DP_q123_1_MaxProfit {
+public class DP_35_q123_1_MaxProfit {
 
     @Test
     public void test(){

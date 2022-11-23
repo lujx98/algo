@@ -6,7 +6,21 @@ import java.util.List;
  * @author sheldon
  * @date 2022-10-03
  */
-public class DP_q139_1_WordBreak {
+public class DP_26_q139_1_WordBreak {
+
+    public boolean wordBreak2(String s, List<String> wordDict) {
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (dp[j] && wordDict.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
 
     public boolean wordBreak1(String s, List<String> wordDict) {
         boolean[] dp = new boolean[s.length() + 1];

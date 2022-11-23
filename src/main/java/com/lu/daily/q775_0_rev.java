@@ -10,7 +10,9 @@ public class q775_0_rev {
 
     @Test
     public void test() {
-        System.out.println(isIdealPermutation1(new int[]{1, 0, 2}));
+        for (int i = 1; i < 300; i++) {
+            System.out.println(String.format("CREATE TABLE `biz_user_task_%s` LIKE `biz_user_task_0`;", i));
+        }
     }
 
     public boolean isIdealPermutation1(int[] nums) {

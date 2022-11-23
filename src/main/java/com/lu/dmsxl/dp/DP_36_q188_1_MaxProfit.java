@@ -6,11 +6,31 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-10-03
  */
-public class DP_q188_1_MaxProfit {
+public class DP_36_q188_1_MaxProfit {
 
     @Test
-    public void test(){
-        System.out.println(maxProfit(2,new int[]{3,3,5,0,0,3,1,4}));
+    public void test() {
+        System.out.println(maxProfit1(2, new int[]{2, 4, 1}));
+    }
+
+    public int maxProfit1(int k, int[] prices) {
+        int length = prices.length;
+        int[][] dp = new int[length][2 * k];
+        for (int i = 0; i < 2 * k; i++) {
+            if (i % 2 == 1) dp[0][i] = -prices[0];
+        }
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < 2 * k; j++) {
+                //dp[i][j + 1] = Math.max(dp[i - 1][j + 1], dp[i - 1][j] - prices[i]);
+                //dp[i][j + 2] = Math.max(dp[i - 1][j + 2], dp[i - 1][j + 1] + prices[i]);
+                if (j % 2 == 0) {
+                    dp[i][j] = Math.max(dp[i - 1][j], j == 0 ? 0 : dp[i - 1][j - 1] + prices[i]);
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i]);
+                }
+            }
+        }
+        return dp[length - 1][2 * k - 2];
     }
 
     public int maxProfit(int k, int[] prices) {

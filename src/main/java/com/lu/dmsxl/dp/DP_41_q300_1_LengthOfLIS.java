@@ -9,7 +9,7 @@ import java.util.function.Function;
  * @author sheldon
  * @date 2022-10-04
  */
-public class DP_41_q300_0_LengthOfLIS {
+public class DP_41_q300_1_LengthOfLIS {
 
     @Test
     public void test() {
@@ -29,7 +29,6 @@ public class DP_41_q300_0_LengthOfLIS {
             }
             res = Math.max(res, dp[i]);
         }
-
         return res;
     }
 

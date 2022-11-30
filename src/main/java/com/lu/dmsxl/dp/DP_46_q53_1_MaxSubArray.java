@@ -18,11 +18,23 @@ public class DP_46_q53_1_MaxSubArray {
         int[] dp = new int[nums.length + 1];
         int max = Integer.MIN_VALUE;
         for (int i = 1; i <= nums.length; i++) {
-            if ((dp[i] = Math.max(nums[i-1], dp[i - 1] + nums[i-1])) > max) {
+            if ((dp[i] = Math.max(nums[i - 1], dp[i - 1] + nums[i - 1])) > max) {
                 max = dp[i];
             }
         }
         return max;
     }
+
+    public int maxSubArray1(int[] nums) {
+        //dp[i]表示  dp[i] = max{ dp[i-1]+nums[i] , nums[i] }
+        int sum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > (sum += nums[i])) {
+                sum = nums[i];
+            }
+        }
+        return sum;
+    }
+
 
 }

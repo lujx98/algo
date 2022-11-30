@@ -19,6 +19,26 @@ public class DP_44_q1143_0_LongestCommonSubsequence {
         System.out.println(a.charAt(0)==b.charAt(0));
     }
 
+    public int longestCommonSubsequence1(String text1, String text2) {
+        int[] dp = new int[text2.length() + 1];
+        for (int i = 1; i <= text1.length(); i++) {
+            char c = text1.charAt(i - 1);
+            int pre = dp[0];
+            for (int j = 1; j <= text2.length(); j++) {
+                char c1 = text2.charAt(j - 1);
+                int cur = dp[j];
+                if (c==c1) {
+                    dp[j] = pre + 1;
+                } else {
+                    dp[j] = Math.max(dp[j], dp[j - 1]);
+                }
+                pre = cur;
+            }
+        }
+        return dp[text2.length()];
+    }
+
+
     public int longestCommonSubsequence(String text1, String text2) {
         //int[][] dp = new int[text1.length() + 1][text2.length() + 1]; // 先对dp数组做初始化操作
         //        for (int i = 1 ; i <= text1.length() ; i++) {

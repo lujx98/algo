@@ -58,7 +58,8 @@ public class q895_1 {
 //            while (count != list.size() + 1) {
 //                Deque<Integer> deque = list.get(list.size() - count);
 //                if (deque.isEmpty()) {
-        // todolu
+        // todolu：
+
 //                    count++;
 //                    continue;
 //                }

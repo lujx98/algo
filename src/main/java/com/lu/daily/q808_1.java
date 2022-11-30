@@ -39,7 +39,31 @@ public class q808_1 {
 
     @Test
     public void test() {
-        System.out.println(soupServings(100));
+        System.out.println(soupServingsB(100));
+    }
+
+
+    public double soupServingsB(int n) {
+        int m = (int) Math.ceil((double) n / 25);
+        if (m >= 179) {
+            return 1.0;
+        }
+        //dp[i][j]表示 汤剩余量时i,j 对答案的贡献值
+        //dp[i][j] = 0.25*dp[i+4][j] + 0.25*dp[i+3][j+1] ...
+        double[][] dp = new double[m][m];
+        for (int i = 0; i < m; i++) {
+            dp[0][i] = 1.0;
+        }
+        dp[0][0] = 0.5D;
+
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < m; j++) {
+                dp[i][j] = (dp[Math.max(i - 4, 0)][j] + dp[Math.max(i - 3, 0)][Math.max(j - 1, 0)]
+                        + dp[Math.max(i - 2, 0)][Math.max(j - 2, 0)] + dp[Math.max(i - 1, 0)][Math.max(j - 3, 0)]) / 4.0;
+            }
+        }
+
+        return dp[m-1][m-1];
     }
 
     public double soupServings(int n) {
@@ -65,10 +89,5 @@ public class q808_1 {
         return dp[m][m];
     }
 
-    public double soupServingsB(int n) {
-
-
-        return 0d;
-    }
 
 }

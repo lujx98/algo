@@ -11,8 +11,25 @@ import org.junit.Test;
 public class Two_5_q24_1_SwapPairs {
 
     @Test
-    public void test(){
-        swapPairs(ListNodeUtils.makeLinked("[1,2,3,4]"));
+    public void test() {
+        swapPairs1(ListNodeUtils.makeLinked("[1,2,3,4]"));
+    }
+
+    public ListNode swapPairs1(ListNode head) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode prev = dummy;
+        while (prev.next != null && prev.next.next != null) {
+            ListNode left = prev.next;
+            ListNode right = prev.next.next;
+            ListNode next = right.next;
+            prev.next = right;
+            right.next = left;
+            prev = left;
+            left.next = next;
+        }
+
+        return dummy.next;
     }
 
     public ListNode swapPairs(ListNode head) {

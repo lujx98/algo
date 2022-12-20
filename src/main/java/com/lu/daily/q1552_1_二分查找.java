@@ -58,21 +58,18 @@ public class q1552_1_二分查找 {
      */
     private boolean check(int res, int[] position, int m) {
         int temp = 0;
-        for (int i : position) {
-            if (m == 1) {
-                return true;
-            }
-            temp += i;
-            if (temp > res) {
-                m--;
-                temp = 0;
-            }
-            if (m == 1) {
-                return true;
+        for (int i = 0; i < position.length; i++) {
+            if (i != 0) {
+                temp+=(position[i]-position[i-1]);
+                if (temp >= res) {
+                    m--;
+                    temp = 0;
+                }
             }
         }
-        return false;
+        return m <= 1;
     }
+
 //    public boolean check(int x, int[] position, int m) {
 //        int pre = position[0], cnt = 1;
 //        for (int i = 1; i < position.length; ++i) {

@@ -20,6 +20,7 @@ public class q1971_1_图论_并查集_DFS {
     }
 
     public boolean validPath(int n, int[][] edges, int source, int destination) {
+        //todo：
         //init var
         List<Integer>[] lists = new List[n];
         for (int i = 0; i < lists.length; i++) {

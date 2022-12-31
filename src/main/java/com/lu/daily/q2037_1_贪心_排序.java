@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-12-31
  */
-public class q2037_贪心_排序 {
+public class q2037_1_贪心_排序 {
 
     @Test
     public void test(){

@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-01-21
  */
-public class q1824_1_每日一题 {
+public class q1824_动态规划_rev {
 
     @Test
     public void test() {

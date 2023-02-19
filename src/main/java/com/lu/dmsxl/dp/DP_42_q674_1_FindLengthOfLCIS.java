@@ -12,7 +12,20 @@ public class DP_42_q674_1_FindLengthOfLCIS {
 
     @Test
     public void test() {
-        System.out.println(findLengthOfLCIS1(new int[]{1, 3, 5, 4, 7}));
+        System.out.println(findLengthOfLCIS2(new int[]{1, 3, 5, 4, 7}));
+    }
+
+    public int findLengthOfLCIS2(int[] nums) {
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp, 1);
+        int res = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                dp[i] = dp[i - 1] + 1;
+            }
+            res = Math.max(dp[i],res);
+        }
+        return res;
     }
 
     public int findLengthOfLCIS1(int[] nums) {

@@ -3,7 +3,6 @@ package com.lu.dmsxl.dp;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.function.Function;
 
 /**
  * @author sheldon
@@ -13,8 +12,25 @@ public class DP_41_q300_1_LengthOfLIS {
 
     @Test
     public void test() {
-        System.out.println(lengthOfLIS1(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
+        System.out.println(lengthOfLIS2(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
     }
+
+    public int lengthOfLIS2(int[] nums) {
+        //if nums[i] > nums[j] then dp[i] = max(dp[i],dp[j]+1)
+        int[] dp = new int[nums.length];
+        Arrays.fill(dp,1);
+        int max = 1;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+                max = Math.max(dp[i], max);
+            }
+        }
+        return max;
+    }
+
 
     public int lengthOfLIS1(int[] nums) {
         int[] dp = new int[nums.length];

@@ -13,6 +13,25 @@ public class DP_36_q188_1_MaxProfit {
         System.out.println(maxProfit1(2, new int[]{2, 4, 1}));
     }
 
+    public int maxProfit2(int k, int[] prices) {
+        int[][] dp = new int[prices.length][2 * k];
+        for (int i = 0; i < k; i++) {
+            dp[0][2 * i] = -prices[0];
+        }
+        for (int i = 1; i < prices.length; i++) {
+            dp[i][0] = Math.max(dp[i - 1][0], -prices[i]);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] + prices[i]);
+            for (int j = 2; j < 2 * k; j++) {
+                if (j % 2 == 0) {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i]);
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i]);
+                }
+            }
+        }
+        return dp[prices.length - 1][2 * k - 1];
+    }
+
     public int maxProfit1(int k, int[] prices) {
         int length = prices.length;
         int[][] dp = new int[length][2 * k];

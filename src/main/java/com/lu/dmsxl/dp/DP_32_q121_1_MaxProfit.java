@@ -15,7 +15,21 @@ public class DP_32_q121_1_MaxProfit {
 
     @Test
     public void test() {
-        System.out.println(maxProfit1(new int[]{7, 1, 5, 3, 6, 4}));
+        System.out.println(maxProfit3(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+
+    public int maxProfit3(int[] prices) {
+        int[][] dp = new int[prices.length][2];
+        //dp[i][1]表示在第i天时持有股票的收益  dp[i][0]表示不持有股票的收益
+        //dp[i][1] = max(dp[i-1][1], -prices[i])
+        //dp[i][0] = max(dp[i-1][1]+price[i], dp[i-1][0])
+        dp[0][0] = 0;
+        dp[0][1] = -prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            dp[i][1] = Math.max(dp[i - 1][1], -prices[i]);
+            dp[i][0] = Math.max(dp[i - 1][1] + prices[i], dp[i - 1][0]);
+        }
+        return dp[prices.length - 1][0];
     }
 
     public int maxProfit2(int[] prices) {

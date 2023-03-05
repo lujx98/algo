@@ -4,7 +4,7 @@ package com.lu.daily;
  * @author sheldon
  * @date 2023-03-05
  */
-public class q982_ {
+public class q982_位运算 {
 
     public int countTriplets(int[] nums) {
         int[] count = new int[1 << 16];

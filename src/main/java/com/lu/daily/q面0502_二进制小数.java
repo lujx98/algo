@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-03-02
  */
-public class q0502_二进制小数 {
+public class q面0502_二进制小数 {
 
     @Test
     public void test(){

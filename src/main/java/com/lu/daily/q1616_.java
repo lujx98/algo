@@ -11,7 +11,6 @@ public class q1616_ {
     }
 
     private boolean doCheck(String a, String b) {
-45455423
 
         return false;
     }

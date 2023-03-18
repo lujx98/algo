@@ -1,6 +1,5 @@
 package com.lu.daily;
 
-import com.google.common.eventbus.AllowConcurrentEvents;
 import org.junit.Test;
 
 /**
@@ -11,8 +10,6 @@ public class q813_1 {
 
     @Test
     public void test() {
-        q813_1[] a = new q813_1[1];
-        a.o
         System.out.println(largestSumOfAverages(new int[]{1, 2, 3, 4, 5, 6, 7}, 4));
     }
 

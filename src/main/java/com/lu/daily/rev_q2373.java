@@ -4,7 +4,7 @@ package com.lu.daily;
  * @author sheldon
  * @date 2023-03-01
  */
-public class q2373_ {
+public class rev_q2373 {
 
     public int[][] largestLocal(int[][] grid) {
         int[][] res = new int[grid.length-2][grid.length-2];

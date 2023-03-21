@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author sheldon
  * @date 2023-01-19
  */
-public class q2299_模拟 {
+public class 模拟_q2299 {
 
     public boolean strongPasswordCheckerII(String password) {
         char[] chars = password.toCharArray();

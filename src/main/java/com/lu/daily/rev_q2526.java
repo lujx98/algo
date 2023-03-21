@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author sheldon
  * @date 2023-01-08
  */
-public class q2526_1 {
+public class rev_q2526 {
 
     @Test
     public void test() {

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-02-16
  */
-public class q2341_模拟 {
+public class 模拟_q2341 {
 
     @Test
     public void test() throws Exception {

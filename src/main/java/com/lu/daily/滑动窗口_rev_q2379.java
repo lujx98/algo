@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-03-09
  */
-public class q2379_滑动窗口_rev {
+public class 滑动窗口_rev_q2379 {
 
     @Test
     public void test(){

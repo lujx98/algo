@@ -11,7 +11,7 @@ import java.util.List;
  * @author sheldon
  * @date 2023-02-28
  */
-public class q2363 {
+public class rev_q2363 {
 
     @Test
     public void test() {

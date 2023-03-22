@@ -4,7 +4,7 @@ package com.lu.daily;
  * @author sheldon
  * @date 2023-01-24
  */
-public class q1828_模拟 {
+public class 模拟_q1828 {
 
     public int[] countPoints(int[][] points, int[][] queries) {
         int[] res = new int[queries.length];

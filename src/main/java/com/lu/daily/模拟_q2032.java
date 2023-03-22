@@ -6,7 +6,7 @@ import java.util.*;
  * @author sheldon
  * @date 2022-12-31
  */
-public class q2032_1_模拟 {
+public class 模拟_q2032 {
 
     public List<Integer> twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
         BitSet bitSet = new BitSet();

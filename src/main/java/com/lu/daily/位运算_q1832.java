@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-12-13
  */
-public class q1832_1_位运算 {
+public class 位运算_q1832 {
 
     @Test
     public void test(){

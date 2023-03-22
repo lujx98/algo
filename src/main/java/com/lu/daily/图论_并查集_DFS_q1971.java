@@ -12,7 +12,7 @@ import java.util.List;
  * @author sheldon
  * @date 2022-12-19
  */
-public class q1971_1_图论_并查集_DFS {
+public class 图论_并查集_DFS_q1971 {
 
     @Test
     public void test(){

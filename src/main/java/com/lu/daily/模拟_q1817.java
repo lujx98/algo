@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-01-20
  */
-public class q1817_模拟 {
+public class 模拟_q1817 {
 
     @Test
     public void test() {

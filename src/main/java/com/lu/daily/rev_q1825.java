@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
  * @author sheldon
  * @date 2023-01-18
  */
-public class q1825_ {
+public class rev_q1825 {
 
     static class MKAverage {
 

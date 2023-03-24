@@ -4,7 +4,7 @@ package com.lu.daily;
  * @author sheldon
  * @date 2023-03-24
  */
-public class rev_q1032 {
+public class rev_字典树_AC自动机_q1032 {
 
     public static class StreamChecker {
 

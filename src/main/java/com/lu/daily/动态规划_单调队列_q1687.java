@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-12-05
  */
-public class q1687_1_动态规划单调队列 {
+public class 动态规划_单调队列_q1687 {
 
     @Test
     public void test() {

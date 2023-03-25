@@ -1,7 +1,6 @@
 package com.lu.daily;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -31,7 +30,7 @@ import java.util.List;
  * @author sheldon
  * @date 2022-11-08
  */
-public class q1684_0 {
+public class rev_q1684 {
 
     public int countConsistentStrings1(String allowed, String[] words){
 

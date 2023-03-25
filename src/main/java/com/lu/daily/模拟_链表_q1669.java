@@ -1,13 +1,12 @@
 package com.lu.daily;
 
 import com.lu.structure.ListNode;
-import org.junit.Test;
 
 /**
  * @author sheldon
  * @date 2023-01-30
  */
-public class q1669_模拟_链表 {
+public class 模拟_链表_q1669 {
 
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
         ListNode dummy = new ListNode();

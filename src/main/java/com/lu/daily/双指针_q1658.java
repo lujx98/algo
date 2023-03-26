@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-01-07
  */
-public class 滑动窗口_双指针_q1658 {
+public class 双指针_q1658 {
 
     @Test
     public void test(){

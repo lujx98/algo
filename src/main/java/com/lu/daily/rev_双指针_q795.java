@@ -2,19 +2,29 @@ package com.lu.daily;
 
 import org.junit.Test;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * @author sheldon
  * @date 2022-11-24
  */
-public class q795_1 {
+public class rev_双指针_q795 {
 
     @Test
     public void test() {
-        System.out.println(numSubarrayBoundedMax(new int[]{2, 9, 2, 5, 6}, 2, 8));
+        System.out.println(numSubarrayBoundedMax1(new int[]{2, 9, 2, 5, 6}, 2, 8));
+    }
+
+    public int numSubarrayBoundedMax1(int[] nums, int left, int right) {
+        int l = -1,r = -1,ans =0 ;
+        for (int rightPtr = 0; rightPtr < nums.length; rightPtr++) {
+            if (nums[rightPtr] > right) {
+                l = rightPtr;
+            }
+            if (nums[rightPtr] >= left) {
+                r = rightPtr;
+            }
+            ans += r-l;
+        }
+        return ans;
     }
 
     public int numSubarrayBoundedMax(int[] nums, int left, int right) {

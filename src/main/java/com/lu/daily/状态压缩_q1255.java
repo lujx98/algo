@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-02-26
  */
-public class q1255_状态压缩 {
+public class 状态压缩_q1255 {
 
     @Test
     public void test(){

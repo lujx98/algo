@@ -30,7 +30,7 @@ import java.util.Objects;
  * @author sheldon
  * @date 2022-11-06
  */
-public class q1678_1 {
+public class rev_q1678 {
 
     private static final String s1 = "()";
     private static final String s2 = "(al)";

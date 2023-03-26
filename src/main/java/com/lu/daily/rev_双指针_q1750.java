@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-12-28
  */
-public class 双指针_重新做_q1750 {
+public class rev_双指针_q1750 {
 
     @Test
     public void test() {

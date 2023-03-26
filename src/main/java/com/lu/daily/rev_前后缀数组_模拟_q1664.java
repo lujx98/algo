@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-01-28
  */
-public class q1664_前后缀数组_模拟_rev {
+public class rev_前后缀数组_模拟_q1664 {
 
     @Test
     public void test() {

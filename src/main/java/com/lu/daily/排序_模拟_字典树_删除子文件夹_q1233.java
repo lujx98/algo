@@ -10,7 +10,7 @@ import java.util.List;
  * @author sheldon
  * @date 2023-02-08
  */
-public class q1233_排序_模拟_字典树_删除子文件夹 {
+public class 排序_模拟_字典树_删除子文件夹_q1233 {
 
     @Test
     public void test() {

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-12-20
  */
-public class q1552_1_二分查找 {
+public class 二分查找_q1552 {
 
     @Test
     public void test() {

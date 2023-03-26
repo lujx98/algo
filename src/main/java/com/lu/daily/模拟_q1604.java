@@ -8,7 +8,7 @@ import java.util.*;
  * @author sheldon
  * @date 2023-02-07
  */
-public class q1604_模拟_警告一小时内使用相同员工卡大于等于三次的人 {
+public class 模拟_q1604 {
 
     @Test
     public void test(){

@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-11-16
  */
-public class q775_0_模拟_后缀最小值数组 {
+public class 前后缀_q775 {
 
     @Test
     public void test() {

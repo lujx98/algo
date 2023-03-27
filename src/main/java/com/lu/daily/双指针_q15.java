@@ -1,4 +1,4 @@
-package com.lu.dmsxl.twopointer;
+package com.lu.daily;
 
 import org.junit.Test;
 
@@ -10,11 +10,37 @@ import java.util.List;
  * @author sheldon
  * @date 2022-03-26
  */
-public class Two_q15_1_ThreeSum {
+public class 双指针_q15 {
 
     @Test
-    public void test(){
-        System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+    public void test() {
+        System.out.println(threeSum1(new int[]{0, 0, 0, 0}));
+    }
+
+    public List<List<Integer>> threeSum1(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1, right = nums.length - 1, target = -nums[i];
+            if (i > 0 && nums[i - 1] == nums[i]) {
+                continue;
+            }
+            while (left < right) {
+                if (nums[left] + nums[right] > target) {
+                    right--;
+                } else if (nums[left] + nums[right] < target) {
+                    left++;
+                } else {
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while (left < right && nums[left + 1] == nums[left]) left++;
+                    while (left < right && nums[right - 1] == nums[right]) right--;
+                    left++;
+                    right--;
+                }
+            }
+        }
+        return res;
     }
 
     public List<List<Integer>> threeSum(int[] nums) {

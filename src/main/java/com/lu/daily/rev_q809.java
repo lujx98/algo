@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author sheldon
  * @date 2022-11-26
  */
-public class q809_0 {
+public class rev_q809 {
 
     //什么傻逼题目 操
     public int expressiveWords(String s, String[] words) {

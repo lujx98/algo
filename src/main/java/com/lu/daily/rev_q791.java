@@ -11,7 +11,7 @@ import java.util.Map;
  * @author sheldon
  * @date 2022-11-13
  */
-public class q791_1 {
+public class rev_q791 {
 
     @Test
     public void test(){

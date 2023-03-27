@@ -9,7 +9,7 @@ import java.util.List;
  * @author sheldon
  * @date 2022-11-17
  */
-public class q792_0_rev {
+public class rev_q792 {
 
     public int numMatchingSubseq(String s, String[] words) {
         List<Integer>[] lists = new List[26];

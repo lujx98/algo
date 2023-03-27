@@ -8,7 +8,7 @@ import java.util.*;
  * @author sheldon
  * @date 2023-03-07
  */
-public class q1096_栈 {
+public class 栈_q1096 {
 
     public List<String> braceExpansionII(String expression) {
         Deque<Character> op = new ArrayDeque<Character>();

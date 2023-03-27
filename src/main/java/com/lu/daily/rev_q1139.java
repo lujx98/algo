@@ -4,7 +4,7 @@ package com.lu.daily;
  * @author sheldon
  * @date 2023-02-17
  */
-public class q1139_没做 {
+public class rev_q1139 {
 
     public int largest1BorderedSquare(int[][] grid) {
         int rowLength = grid.length, columnLength = grid[0].length;

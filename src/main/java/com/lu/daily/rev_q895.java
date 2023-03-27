@@ -6,7 +6,7 @@ import java.util.*;
  * @author sheldon
  * @date 2022-11-30
  */
-public class q895_1 {
+public class rev_q895 {
 
     public static void main(String[] args) {
         FreqStack freqStack = new FreqStack();

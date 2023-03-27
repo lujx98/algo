@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-02-03
  */
-public class q1145_树_模拟 {
+public class 树_模拟_q1145 {
 
     @Test
     public void test() {

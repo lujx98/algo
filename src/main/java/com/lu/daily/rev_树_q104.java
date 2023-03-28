@@ -1,4 +1,4 @@
-package com.lu.dmsxl.tree;
+package com.lu.daily;
 
 import com.lu.structure.TreeNode;
 import com.lu.utils.TreeUtils;
@@ -11,11 +11,16 @@ import java.util.Queue;
  * @author sheldon
  * @date 2022-04-05
  */
-public class Tree_q104_0_MaxDepth {
+public class rev_树_q104 {
 
     @Test
     public void test(){
         System.out.println(maxDepth(TreeUtils.makeTree("[3,9,20,null,null,15,7]")));
+    }
+
+    public int maxDepth2(TreeNode root) {
+
+        return 0;
     }
 
     public int maxDepth(TreeNode root) {

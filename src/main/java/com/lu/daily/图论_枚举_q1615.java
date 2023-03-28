@@ -4,7 +4,7 @@ package com.lu.daily;
  * @author sheldon
  * @date 2023-03-15
  */
-public class 图_枚举_q1615 {
+public class 图论_枚举_q1615 {
 
     public int maximalNetworkRank(int n, int[][] roads) {
         int[] count = new int[n];

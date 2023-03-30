@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-02-06
  */
-public class 模拟_计算布尔二叉树的值_q2331 {
+public class 模拟_q2331_计算布尔二叉树的值 {
 
     @Test
     public void test() {

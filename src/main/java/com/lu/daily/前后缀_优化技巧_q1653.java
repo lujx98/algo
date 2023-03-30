@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-03-06
  */
-public class 前缀后缀_优化技巧_q1653 {
+public class 前后缀_优化技巧_q1653 {
 
     @Test
     public void test() {

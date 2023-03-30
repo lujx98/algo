@@ -1,10 +1,19 @@
-package com.lu.dmsxl.dp;
+package com.lu.daily;
+
+import org.junit.Test;
+
+import java.util.Arrays;
 
 /**
  * @author sheldon
  * @date 2022-06-05
  */
-public class DP_14_q1049_1_LastStoneWeightII {
+public class 动态规划_q1049_最后一块石头的重量II {
+
+    @Test
+    public void test() {
+        System.out.println(lastStoneWeightII(new int[]{31, 26, 33, 21, 40}));
+    }
 
     public int lastStoneWeightII(int[] stones) {
         int sum = 0;
@@ -12,14 +21,30 @@ public class DP_14_q1049_1_LastStoneWeightII {
             sum += stone;
         }
         int target = sum / 2;
+
         int[] dp = new int[target + 1];
         for (int i = 0; i < stones.length; i++) {
             for (int j = target; j >= stones[i]; j--) {
                 dp[j] = Math.max(dp[j], dp[j - stones[i]] + stones[i]);
             }
         }
-        return Math.abs(sum - 2 * dp[target]);
+        return Math.abs(sum - dp[target] * 2);
     }
+
+//    public int lastStoneWeightII(int[] stones) {
+//        int sum = 0;
+//        for (int stone : stones) {
+//            sum += stone;
+//        }
+//        int target = sum / 2;
+//        int[] dp = new int[target + 1];
+//        for (int i = 0; i < stones.length; i++) {
+//            for (int j = target; j >= stones[i]; j--) {
+//                dp[j] = Math.max(dp[j], dp[j - stones[i]] + stones[i]);
+//            }
+//        }
+//        return Math.abs(sum - 2 * dp[target]);
+//    }
 
 //    public int lastStoneWeight1II(int[] stones) {
 //        int sum = 0;

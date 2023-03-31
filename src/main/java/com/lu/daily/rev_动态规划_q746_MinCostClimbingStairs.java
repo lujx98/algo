@@ -1,4 +1,4 @@
-package com.lu.dmsxl.dp;
+package com.lu.daily;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-05-30
  */
-public class DP_q746_0_MinCostClimbingStairs {
+public class rev_动态规划_q746_MinCostClimbingStairs {
 
     @Test
     public void test() {

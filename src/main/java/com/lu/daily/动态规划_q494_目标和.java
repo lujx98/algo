@@ -1,4 +1,4 @@
-package com.lu.dmsxl.dp;
+package com.lu.daily;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

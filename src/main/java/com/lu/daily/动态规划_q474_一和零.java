@@ -1,14 +1,42 @@
-package com.lu.dmsxl.dp;
+package com.lu.daily;
+
+import org.junit.Test;
 
 /**
  * @author sheldon
  * @date 2022-08-25
  */
-public class DP_20_q474_1_FindMaxForm {
+public class 动态规划_q474_一和零 {
+
+    @Test
+    public void test(){
+        System.out.println(findMaxForm(new String[]{"10", "0001", "111001", "1", "0"}, 5, 3));
+    }
 
     public int findMaxForm(String[] strs, int m, int n) {
+        int[][] ints = new int[strs.length][2];
+        for (int i = 0; i < strs.length; i++) {
+            int zCount = 0;
+            int oCount = 0;
+            for (char c : strs[i].toCharArray()) {
+                if (c == '1') {
+                    oCount++;
+                } else {
+                    zCount++;
+                }
+            }
+            ints[i] = new int[]{zCount, oCount};
+        }
 
-        return 0;
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 0; i < ints.length; i++) {
+            for (int j = dp.length - 1; j >= ints[i][0]; j--) {
+                for (int z = dp[0].length - 1; z >= ints[i][1]; z--) {
+                    dp[j][z] = Math.max(dp[j][z], dp[j - ints[i][0]][z - ints[i][1]] + 1);
+                }
+            }
+        }
+        return dp[m][n];
     }
 
 //    public int findMaxForm(String[] strs, int m, int n) {

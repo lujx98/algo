@@ -1,4 +1,4 @@
-package com.lu.dmsxl.dp;
+package com.lu.daily;
 
 import org.junit.Test;
 
@@ -6,14 +6,25 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-09-30
  */
-public class DP_21_q377_2_CombinationSum4 {
+public class 动态规划_q377_组合总和Ⅳ {
 
     @Test
     public void test() {
-
+        System.out.println(combinationSum4(new int[]{1, 2, 3}, 4));
     }
 
-
+    public int combinationSum4(int[] nums, int target) {
+        int[] dp = new int[target + 1];
+        dp[0] = 1;
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] <= i) {
+                    dp[i] += dp[i - nums[j]];
+                }
+            }
+        }
+        return dp[target];
+    }
 
 //    public int combinationSum4(int[] nums, int target) {
 //        int[] dp = new int[target + 1];

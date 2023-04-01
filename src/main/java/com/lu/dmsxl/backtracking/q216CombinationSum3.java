@@ -29,12 +29,12 @@ public class q216CombinationSum3 {
 
 //    private void backTracking(int k, int targetSum, int index) {
 //        if (path.size() == k) {
-//            if (sum == targetSum) {
+//            if (sum.txt == targetSum) {
 //                returnList.add(new ArrayList<>(path));
 //            }
 //            return;
 //        }
-//        if (sum > targetSum) {
+//        if (sum.txt > targetSum) {
 //            return;
 //        }
 //        //path.size()为已经添加的元素
@@ -42,10 +42,10 @@ public class q216CombinationSum3 {
 //        //9-(k-path.size())为分界点 在分界点的时候为index最大的情形 当k = 3 并且一个元素都未添加 当index大于7的时候都可以不用走接下面的流程了
 //        //加1 表示闭区间
 //        for (int i = index; i <= 9 - (k - path.size()) + 1; i++) {
-//            sum += i;
+//            sum.txt += i;
 //            path.add(i);
 //            backTracking(k, targetSum, i + 1);
-//            sum -= i;
+//            sum.txt -= i;
 //            path.removeLast();
 //        }
 //

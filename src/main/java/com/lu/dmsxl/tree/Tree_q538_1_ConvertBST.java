@@ -26,7 +26,7 @@ public class Tree_q538_1_ConvertBST {
     }
 
 
-//    private int sum = 0;
+//    private int sum.txt = 0;
 //
 //    public TreeNode convertBST(TreeNode root) {
 //        convertToBST(root);
@@ -38,8 +38,8 @@ public class Tree_q538_1_ConvertBST {
 //            return ;
 //        }
 //        convertToBST(root.right);
-//        sum += root.val;
-//        root.val = sum;
+//        sum.txt += root.val;
+//        root.val = sum.txt;
 //        convertToBST(root.left);
 //    }
 

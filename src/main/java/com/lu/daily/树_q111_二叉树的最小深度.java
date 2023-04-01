@@ -1,11 +1,6 @@
 package com.lu.daily;
 
 import com.lu.structure.TreeNode;
-import sun.nio.cs.ext.MacHebrew;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @author sheldon

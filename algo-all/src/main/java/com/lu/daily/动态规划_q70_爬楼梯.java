@@ -10,7 +10,24 @@ public class 动态规划_q70_爬楼梯 {
 
     @Test
     public void test() {
-        System.out.println(climbStairs(4));
+        System.out.println(climbStairs1(4));
+    }
+
+    private int[] memo;
+
+    public int climbStairs1(int n) {
+        this.memo = new int[n+1];
+        return dfs(n);
+    }
+
+    private int dfs(int n) {
+        if (n <= 2) {
+            return n;
+        }
+        if (memo[n] != 0) {
+            return memo[n];
+        }
+        return memo[n] = (dfs(n - 1) + dfs(n - 2));
     }
 
     public int climbStairs(int n) {
@@ -21,7 +38,7 @@ public class 动态规划_q70_爬楼梯 {
         dp[0] = 1;
         dp[1] = 2;
         for (int i = 2; i < n; i++) {
-            dp[i] = dp[i-1] + dp[i-2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
         return dp[n - 1];
     }

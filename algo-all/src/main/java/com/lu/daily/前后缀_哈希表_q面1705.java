@@ -8,7 +8,7 @@ import java.util.*;
  * @author sheldon
  * @date 2023-03-11
  */
-public class 前缀和_哈希表_q面1705 {
+public class 前后缀_哈希表_q面1705 {
 
     @Test
     public void test() {

@@ -9,7 +9,7 @@ import java.util.Map;
  * @author sheldon
  * @date 2023-03-10
  */
-public class 前缀和_哈希表记录下标优化_q1590 {
+public class 前后缀_哈希表记录下标优化_q1590 {
 
     @Test
     public void test() {

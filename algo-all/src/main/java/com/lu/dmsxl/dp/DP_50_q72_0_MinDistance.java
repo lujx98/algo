@@ -6,6 +6,8 @@ package com.lu.dmsxl.dp;
  */
 public class DP_50_q72_0_MinDistance {
 
+
+
     public int minDistance(String word1, String word2) {
         int length = word1.length();
         int length1 = word2.length();

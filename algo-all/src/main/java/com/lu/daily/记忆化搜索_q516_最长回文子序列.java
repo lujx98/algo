@@ -37,11 +37,12 @@ public class 记忆化搜索_q516_最长回文子序列 {
         if (memo[head][tail] != -1) return memo[head][tail];
 
         if (s.charAt(head) == s.charAt(tail)) {
-            return memo[head][tail] = dfs(head + 1, tail - 1, s)+2;
+            return memo[head][tail] = dfs(head + 1, tail - 1, s) + 2;
         }
         return memo[head][tail] = Math.max(dfs(head + 1, tail, s), dfs(head, tail - 1, s));
     }
-//
+
+    //
     public int longestPalindromeSubseq1(String s) {
         int[][] dp = new int[s.length() + 1][s.length() + 1];
         int len = s.length();

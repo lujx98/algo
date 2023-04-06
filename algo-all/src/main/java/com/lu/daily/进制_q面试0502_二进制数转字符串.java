@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-03-02
  */
-public class 二进制小数_q面0502 {
+public class 进制_q面试0502_二进制数转字符串 {
 
     @Test
     public void test(){

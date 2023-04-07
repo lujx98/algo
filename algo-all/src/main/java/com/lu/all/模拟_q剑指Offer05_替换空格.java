@@ -1,4 +1,4 @@
-package com.lu.dmsxl.string;
+package com.lu.all;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author sheldon
  * @date 2022-03-31
  */
-public class JZq05 {
+public class 模拟_q剑指Offer05_替换空格 {
     public static void main(String[] args) {
         replaceSpace1("     ");
     }

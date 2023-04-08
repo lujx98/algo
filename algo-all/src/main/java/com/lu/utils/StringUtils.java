@@ -48,6 +48,32 @@ public class StringUtils {
         return strings;
     }
 
+    public static List<List<String>> parse2DList(String str) {
+        String substring = str.substring(1, str.length() - 1);
+        List<List<String>> list = new ArrayList<>();
+        char[] chars = substring.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == '[') {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(chars[i]);
+                while (chars[i] != ']') {
+                    i++;
+                    stringBuilder.append(chars[i]);
+                }
+                String substring1 = stringBuilder.toString();
+                if (substring1.length() == 2) {
+                    list.add(new ArrayList<>());
+                    continue;
+                }
+                String substring2 = substring1.substring(1, substring1.length() - 1);
+                substring2 = substring2.replace("\"", "");
+                String[] split = substring2.split(",");
+                list.add(Arrays.asList(split));
+            }
+        }
+        return list;
+    }
+
     public static String[] parseArray(String str) {
         String substring = str.substring(1, str.length() - 1);
         String[] split = substring.split(",");

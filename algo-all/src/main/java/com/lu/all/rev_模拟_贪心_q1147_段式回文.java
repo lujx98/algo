@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-04-12
  */
-public class 模拟_贪心_q1147_段式回文 {
+public class rev_模拟_贪心_q1147_段式回文 {
 
     private String text;
 

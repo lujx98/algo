@@ -2,13 +2,11 @@ package com.lu.all;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-
 /**
  * @author sheldon
  * @date 2022-12-20
  */
-public class 二分查找_q1552 {
+public class 二分查找_q1552_两球之间的磁力 {
 
     @Test
     public void test() {
@@ -16,21 +14,27 @@ public class 二分查找_q1552 {
     }
 
     public int maxDistance(int[] position, int m) {
-        Arrays.sort(position);
-        int left = 1;
-        int right = position[position.length - 1] - position[0];
-        int returnInt = 0;
-        while (left <= right) {
-            int res = left + (right - left) / 2;
-            if (check(res, position, m)) {
-                returnInt = res;
-                left = res + 1;
-            } else {
-                right = res - 1;
-            }
-        }
-        return returnInt;
+
+
+        return 0;
     }
+
+//    public int maxDistance(int[] position, int m) {
+//        Arrays.sort(position);
+//        int left = 1;
+//        int right = position[position.length - 1] - position[0];
+//        int returnInt = 0;
+//        while (left <= right) {
+//            int res = left + (right - left) / 2;
+//            if (check(res, position, m)) {
+//                returnInt = res;
+//                left = res + 1;
+//            } else {
+//                right = res - 1;
+//            }
+//        }
+//        return returnInt;
+//    }
 
 //    public int maxDistance(int[] position, int m) {
 //        Arrays.sort(position);
@@ -60,7 +64,7 @@ public class 二分查找_q1552 {
         int temp = 0;
         for (int i = 0; i < position.length; i++) {
             if (i != 0) {
-                temp+=(position[i]-position[i-1]);
+                temp += (position[i] - position[i - 1]);
                 if (temp >= res) {
                     m--;
                     temp = 0;

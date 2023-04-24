@@ -1,6 +1,5 @@
 package com.lu.all;
 
-import jdk.internal.instrumentation.TypeMapping;
 import org.junit.Test;
 
 /**

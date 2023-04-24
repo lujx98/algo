@@ -1,12 +1,8 @@
 package com.lu.all;
 
 import com.lu.structure.ListNode;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author sheldon

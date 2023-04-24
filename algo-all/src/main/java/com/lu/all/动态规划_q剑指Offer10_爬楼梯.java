@@ -2,8 +2,6 @@ package com.lu.all;
 
 import org.junit.Test;
 
-import java.util.concurrent.LinkedTransferQueue;
-
 /**
  * @author sheldon
  * @date 2023-04-07

@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.structure.ArraysUtils;
+import com.lu.utils.ArraysUtils;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-package com.lu.structure;
+package com.lu.utils;
 
 import org.junit.Test;
 

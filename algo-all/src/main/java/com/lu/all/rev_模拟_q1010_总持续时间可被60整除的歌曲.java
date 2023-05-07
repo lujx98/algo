@@ -26,4 +26,23 @@ public class rev_模拟_q1010_总持续时间可被60整除的歌曲 {
         return (int) res;
     }
 
+//    public int numPairsDivisibleBy60(int[] time) {
+//        int[] ints = new int[60];
+//        for (int i : time) {
+//            ints[i % 60]++;
+//        }
+//        int res = 0;
+//        for (int i : time) {
+//            if (i % 60 == 0) {
+//                continue;
+//            }
+//            if (i == 30) {
+//                res += (ints[(60 - i % 60)] - 1);
+//            } else {
+//                res += ints[(60 - i % 60)];
+//            }
+//        }
+//        return res / 2 + ((ints[0]) * (ints[0] - 1) / 2);
+//    }
+
 }

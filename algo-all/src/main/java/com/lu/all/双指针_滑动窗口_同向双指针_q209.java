@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-03-26
  */
-public class 双指针_q209 {
+public class 双指针_滑动窗口_同向双指针_q209 {
 
     @Test
     public void test() {

@@ -8,11 +8,19 @@ import java.util.HashSet;
  * @author sheldon
  * @date 2023-03-26
  */
-public class 双指针_q3 {
+public class 双指针_滑动窗口_同向双指针_q3 {
 
     @Test
     public void test() {
         System.out.println(lengthOfLongestSubstring("dvdf"));
+    }
+
+    public int lengthOfLongestSubstring1(String s) {
+        int res = 0;
+        for (int right = 0, left = 0; right < s.length(); right++) {
+
+        }
+        return res;
     }
 
     public int lengthOfLongestSubstring(String s) {

@@ -4,7 +4,7 @@ package com.lu.all;
  * @author sheldon
  * @date 2023-03-26
  */
-public class 双指针_q713 {
+public class 双指针_滑动窗口_同向双指针_q713 {
 
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         int ans = 0, left = 0, prod = 1;

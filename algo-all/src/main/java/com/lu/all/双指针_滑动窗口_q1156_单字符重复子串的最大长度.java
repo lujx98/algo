@@ -10,7 +10,7 @@ public class 双指针_滑动窗口_q1156_单字符重复子串的最大长度 {
 
     @Test
     public void test() {
-        System.out.println(maxRepOpt1("abcdef"));
+        System.out.println(maxRepOpt1("aaabaaa"));
     }
 
     public int maxRepOpt1(String text) {
@@ -35,8 +35,9 @@ public class 双指针_滑动窗口_q1156_单字符重复子串的最大长度 {
                 }
                 int rightLength = right - left - 1;
                 int b = rightLength + leftLength + 1;
-                b = b > count[text.charAt(cur) - 'a'] ? count[text.charAt(cur) - 'a'] : b;
+                b = Math.min(b, count[text.charAt(cur) - 'a']);
                 res = Math.max(res, b);
+                left = right;
             } else {
                 res = Math.max(res, leftLength);
             }

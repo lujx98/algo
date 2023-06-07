@@ -25,9 +25,16 @@ public class 二分查找_模板_q34_在排序数组中查找元素的第一个�
     }
 
     private int lowerBound(int[] nums, int i) {
-        int left = 0, right = nums.length - 1;
-
-
-        return 0;
+        int left = 0, right = nums.length;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < i) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
     }
+
 }

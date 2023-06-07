@@ -16,28 +16,18 @@ public class 二分查找_模板_q34_在排序数组中查找元素的第一个�
     }
 
     public int[] searchRange(int[] nums, int target) {
-        int lower = findLower(nums, target);
-        if (lower == 0 || nums[lower] != target) {
-            lower = -1;
-        }
-        int i = findLower(nums, target + 1) - 1;
-        if (i <= 0 || nums[i] != target) {
-            i = -1;
-        }
-        return new int[]{lower, i};
+        int start = lowerBound(nums, target); // 选择其中一种写法即可
+        if (start == nums.length || nums[start] != target)
+            return new int[]{-1, -1};
+        // 如果 start 存在，那么 end 必定存在
+        int end = lowerBound(nums, target + 1) - 1;
+        return new int[]{start, end};
     }
 
-    private int findLower(int[] nums, int target) {
-        int right = nums.length - 1, left = 0;
-        while (right >= left) {
-            int mid = right + (left - right) / 2;
-            if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return left;
-    }
+    private int lowerBound(int[] nums, int i) {
+        int left = 0, right = nums.length - 1;
 
+
+        return 0;
+    }
 }

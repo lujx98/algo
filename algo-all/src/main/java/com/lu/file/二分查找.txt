@@ -1,0 +1,11 @@
+int left = 0, right = nums.length - 1;
+while (left < right) {
+    int mid = left + (right - left) / 2;
+    if (check(mid)) {
+        left = mid + 1;
+    } else {
+        right = mid;
+    }
+}
+return left;
+这种做法在没有找到的情况下，left会指向 比target大的第一个数据之前 或者 数组最后一个数（在没有比target大的数据的时候）

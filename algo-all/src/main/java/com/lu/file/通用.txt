@@ -1,0 +1,1 @@
+Array.stream().sum() long会溢出  只能算int类型的数据

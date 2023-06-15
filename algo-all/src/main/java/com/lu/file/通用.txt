@@ -1,1 +1,13 @@
 Array.stream().sum() long会溢出  只能算int类型的数据
+
+int offset = 0;
+boolean[] booleans = new boolean[26];
+for (char c : substring.toCharArray()) {
+    if (booleans[c - 'a']) {
+        offset++;
+        booleans[c - 'a'] = false;
+    } else {
+        booleans[c - 'a'] = true;
+    }
+}
+可以用异或替代

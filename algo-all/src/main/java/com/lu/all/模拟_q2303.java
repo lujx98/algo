@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 /**
@@ -11,7 +11,7 @@ public class 模拟_q2303 {
 
     @Test
     public void test(){
-        System.out.println(calculateTax(ArraysUtils.makeIntArraysByString("[[3,50],[7,10],[12,25]]"), 10));
+        System.out.println(calculateTax(ArrayUtils.makeIntArraysByString("[[3,50],[7,10],[12,25]]"), 10));
     }
 
     public double calculateTax(int[][] brackets, int income) {

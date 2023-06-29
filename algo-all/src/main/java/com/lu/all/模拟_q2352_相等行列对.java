@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 import java.util.*;
@@ -14,7 +14,7 @@ public class 模拟_q2352_相等行列对 {
 
     @Test
     public void test() {
-        System.out.println(equalPairs(ArraysUtils.makeIntArraysByString("[[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]")));
+        System.out.println(equalPairs(ArrayUtils.makeIntArraysByString("[[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]")));
     }
 
     public int equalPairs(int[][] grid) {

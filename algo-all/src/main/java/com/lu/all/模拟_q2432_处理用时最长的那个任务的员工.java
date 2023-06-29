@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 /**
@@ -11,7 +11,7 @@ public class 模拟_q2432_处理用时最长的那个任务的员工 {
 
     @Test
     public void test() {
-        hardestWorker(100, ArraysUtils.makeIntArraysByString("[[1,1],[3,7],[2,12],[7,17]]"));
+        hardestWorker(100, ArrayUtils.makeIntArraysByString("[[1,1],[3,7],[2,12],[7,17]]"));
     }
 
     public int hardestWorker(int n, int[][] logs) {

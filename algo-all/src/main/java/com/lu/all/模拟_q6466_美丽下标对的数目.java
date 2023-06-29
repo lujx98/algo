@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-06-25
  */
-public class q6466 {
+public class 模拟_q6466_美丽下标对的数目 {
 
     @Test
     public void test() {

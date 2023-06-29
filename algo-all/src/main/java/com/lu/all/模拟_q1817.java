@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,7 +13,7 @@ public class 模拟_q1817 {
 
     @Test
     public void test() {
-        findingUsersActiveMinutes(ArraysUtils.makeIntArraysByString("[[305589003,4136],[305589004,4139],[305589004,4141],[305589004,4137],[305589001,4139],[305589001,4139]]"),6);
+        findingUsersActiveMinutes(ArrayUtils.makeIntArraysByString("[[305589003,4136],[305589004,4139],[305589004,4141],[305589004,4137],[305589001,4139],[305589001,4139]]"),6);
     }
 
     public int[] findingUsersActiveMinutes(int[][] logs, int k) {

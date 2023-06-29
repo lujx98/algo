@@ -1,12 +1,7 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
 import org.junit.Test;
 
-import javax.crypto.IllegalBlockSizeException;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.HashMap;
 
 /**
@@ -19,7 +14,7 @@ public class rev_q1072 {
     public void test() {
         HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
 
-//        System.out.println(maxEqualRowsAfterFlips(ArraysUtils.makeIntArraysByString("[[0,1],[1,1]]")));
+//        System.out.println(maxEqualRowsAfterFlips(ArrayUtils.makeIntArraysByString("[[0,1],[1,1]]")));
     }
 
 

@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,7 +13,7 @@ public class rev_q1254 {
 
     @Test
     public void test(){
-        int[][] grid = ArraysUtils.makeIntArraysByString("[[0,0,1,1,0,1,0,0,1,0],[1,1,0,1,1,0,1,1,1,0],[1,0,1,1,1,0,0,1,1,0],[0,1,1,0,0,0,0,1,0,1],[0,0,0,0,0,0,1,1,1,0],[0,1,0,1,0,1,0,1,1,1],[1,0,1,0,1,1,0,0,0,1],[1,1,1,1,1,1,0,0,0,0],[1,1,1,0,0,1,0,1,0,1],[1,1,1,0,1,1,0,1,1,0]]");
+        int[][] grid = ArrayUtils.makeIntArraysByString("[[0,0,1,1,0,1,0,0,1,0],[1,1,0,1,1,0,1,1,1,0],[1,0,1,1,1,0,0,1,1,0],[0,1,1,0,0,0,0,1,0,1],[0,0,0,0,0,0,1,1,1,0],[0,1,0,1,0,1,0,1,1,1],[1,0,1,0,1,1,0,0,0,1],[1,1,1,1,1,1,0,0,0,0],[1,1,1,0,0,1,0,1,0,1],[1,1,1,0,1,1,0,1,1,0]]");
         for (int[] ints : grid) {
             System.out.println(Arrays.toString(ints));
         }

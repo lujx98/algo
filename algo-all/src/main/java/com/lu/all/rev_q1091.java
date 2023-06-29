@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 import java.util.ArrayDeque;
@@ -14,7 +14,7 @@ public class rev_q1091 {
 
     @Test
     public void test() {
-        System.out.println(shortestPathBinaryMatrix(ArraysUtils.makeIntArraysByString("[0,0,0],[0,0,0],[0,0,0]")));
+        System.out.println(shortestPathBinaryMatrix(ArrayUtils.makeIntArraysByString("[0,0,0],[0,0,0],[0,0,0]")));
     }
 
     public int shortestPathBinaryMatrix(int[][] grid) {

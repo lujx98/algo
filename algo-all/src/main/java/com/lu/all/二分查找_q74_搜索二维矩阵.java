@@ -1,9 +1,7 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 /**
  * @author sheldon
@@ -13,7 +11,7 @@ public class 二分查找_q74_搜索二维矩阵 {
 
     @Test
     public void test() {
-        System.out.println(searchMatrix(ArraysUtils.makeIntArraysByString("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]"), 3));
+        System.out.println(searchMatrix(ArrayUtils.makeIntArraysByString("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]"), 3));
     }
 
     public boolean searchMatrix(int[][] matrix, int target) {

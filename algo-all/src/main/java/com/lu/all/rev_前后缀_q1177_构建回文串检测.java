@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class rev_前后缀_q1177_构建回文串检测 {
 
     @Test
     public void test() {
-        System.out.println(canMakePaliQueries("abcda", ArraysUtils.makeIntArraysByString("[[3,3,0],[1,2,0],[0,3,1],[0,3,2],[0,4,1]]")));
+        System.out.println(canMakePaliQueries("abcda", ArrayUtils.makeIntArraysByString("[[3,3,0],[1,2,0],[0,3,1],[0,3,2],[0,4,1]]")));
     }
 
     public List<Boolean> canMakePaliQueries(String s, int[][] queries) {

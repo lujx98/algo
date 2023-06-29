@@ -1,6 +1,6 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
 /**
@@ -11,7 +11,7 @@ public class 动态规划_记忆化搜索_q1105_填充书架 {
 
     @Test
     public void test() {
-        System.out.println(minHeightShelves(ArraysUtils.makeIntArraysByString("[1,3],[2,4],[3,2]"), 6));
+        System.out.println(minHeightShelves(ArrayUtils.makeIntArraysByString("[1,3],[2,4],[3,2]"), 6));
     }
 
     private int[][] books;

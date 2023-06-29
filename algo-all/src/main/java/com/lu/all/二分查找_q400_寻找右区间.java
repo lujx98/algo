@@ -1,9 +1,8 @@
 package com.lu.all;
 
-import com.lu.utils.ArraysUtils;
+import com.lu.utils.ArrayUtils;
 import org.junit.Test;
 
-import javax.xml.bind.annotation.XmlID;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -15,7 +14,7 @@ public class 二分查找_q400_寻找右区间 {
 
     @Test
     public void test() {
-        System.out.println(Arrays.toString(findRightInterval(ArraysUtils.makeIntArraysByString("[[1,4],[2,3],[3,4]]"))));
+        System.out.println(Arrays.toString(findRightInterval(ArrayUtils.makeIntArraysByString("[[1,4],[2,3],[3,4]]"))));
     }
 
     public int[] findRightInterval(int[][] intervals) {

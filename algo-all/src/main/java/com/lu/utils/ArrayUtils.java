@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-01-20
  */
-public class ArraysUtils {
+public class ArrayUtils {
 
     @Test
     public void test() {

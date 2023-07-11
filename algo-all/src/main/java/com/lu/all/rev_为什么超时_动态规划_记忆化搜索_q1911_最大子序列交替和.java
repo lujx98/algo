@@ -4,17 +4,29 @@ import com.sun.javafx.iio.gif.GIFImageLoaderFactory;
 import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 import org.junit.Test;
 
+import java.io.*;
 import java.util.Arrays;
 
 /**
  * @author sheldon
  * @date 2023-07-11
  */
-public class 动态规划_记忆化搜索_q1911_最大子序列交替和 {
+public class rev_为什么超时_动态规划_记忆化搜索_q1911_最大子序列交替和 {
 
     @Test
-    public void test() {
-        System.out.println(maxAlternatingSum(new int[]{4, 2, 5, 3}));
+    public void test() throws IOException {
+        File file = new File("C:\\Users\\Administrator\\Desktop\\新建文本文档 (4).txt");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String s = reader.readLine();
+        String[] split = s.split(",");
+        int[] ints = new int[split.length];
+        for (int i = 0; i < split.length; i++) {
+            ints[i] = Integer.parseInt(split[i]);
+        }
+        System.out.println(Arrays.toString(ints));
+        split = null;
+        System.out.println(maxAlternatingSum(ints));
     }
 
     private int[] nums;
@@ -40,8 +52,7 @@ public class 动态规划_记忆化搜索_q1911_最大子序列交替和 {
         ans = Math.max(ans, dfs(index + 1, minus ^ 1) + nums[index] * (1 - 2L * minus));
         return memo[index][minus] = ans;
     }
-
-
+//      todo:为什么超时
 //    private int[] nums;
 //    private long[][] memo;
 //
@@ -59,12 +70,12 @@ public class 动态规划_记忆化搜索_q1911_最大子序列交替和 {
 //    }
 //
 //    private long dfs(int index, int minus) {
-//        if (memo[index][minus] != Integer.MIN_VALUE) {
-//            return memo[index][minus];
-//        }
 //        int cur = nums[index] * (1 - 2 * minus);
 //        if (index == nums.length - 1) {
 //            return cur;
+//        }
+//        if (memo[index][minus] != Integer.MIN_VALUE) {
+//            return memo[index][minus];
 //        }
 //
 //        long res = cur;

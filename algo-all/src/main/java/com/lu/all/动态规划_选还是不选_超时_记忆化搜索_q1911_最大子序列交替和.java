@@ -25,6 +25,7 @@ public class 动态规划_选还是不选_超时_记忆化搜索_q1911_最大子
             ints[i] = Integer.parseInt(split[i]);
         }
         System.out.println(Arrays.toString(ints));
+        System.out.println(ints.length);
         split = null;
         System.out.println(maxAlternatingSum(ints));
     }

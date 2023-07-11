@@ -1,8 +1,37 @@
+对于类似子序列（选和不选）：   q1911
+dfs里面只管当前和下一个
+应该是这样：
+private long dfs(int index, int minus) {
+    if (index == nums.length) {
+        return 0;
+    }
+    if (memo[index][minus] != Integer.MIN_VALUE) {
+        return memo[index][minus];
+    }
+    long ans = dfs(index + 1, minus);
+    ans = Math.max(ans, dfs(index + 1, minus ^ 1) + nums[index] * (1 - 2L * minus));
+    return memo[index][minus] = ans;
+}
+不是这样：
+private long dfs(int index, int minus) {
+    if (memo[index][minus] != Integer.MIN_VALUE) {
+        return memo[index][minus];
+    }
+    int cur = nums[index] * (1 - 2 * minus);
+    if (index == nums.length - 1) {
+        return cur;
+    }
+    long res = cur;
+    for (int i = index + 1; i < nums.length; i++) {
+        res = Math.max(res, cur + dfs(i, minus ^ 1));
+    }
+    return memo[index][minus] = res;
+}
+-----------------------------------------------------------------------------------
 有多少种装满背包的情况   01背包
 q494 +1+1-1-1+1
 q416 分割等和子集
-
-
+-----------------------------------------------------------------------------------
 求组合数量  完全背包
 q518  硬币数量
 
@@ -12,8 +41,6 @@ q377 组合总和
 求排列数量 完全背包 求个数
 
 求排列数量 完全背包 求能否
-
-
 
 如果求组合数就是外层for循环遍历物品，内层for遍历背包。
 

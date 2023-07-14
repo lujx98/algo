@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-11-26
  */
-public class 动态规划_选还是不选_记忆化搜索_q115_不同的子序列 {
+public class 动态规划_选还是不选_超时_记忆化搜索_q115_不同的子序列 {
 
     @Test
     public void test() {
@@ -45,6 +45,40 @@ public class 动态规划_选还是不选_记忆化搜索_q115_不同的子序�
         }
         return memo[is][it] = res;
     }
+
+//    超时
+//    private String s;
+//    private String t;
+//    private int[][] memo;
+//
+//    public int numDistinct(String s, String t) {
+//        this.memo = new int[s.length()][t.length()];
+//        for (int[] ints : this.memo) {
+//            Arrays.fill(ints, -1);
+//        }
+//        this.s = s;
+//        this.t = t;
+//        return dfs(0, 0);
+//    }
+//
+//    private int dfs(int is, int it) {
+//        if (it == t.length()) {
+//            return 1;
+//        }
+//        if (is == s.length()) {
+//            return 0;
+//        }
+//        if (memo[is][it] != -1) {
+//            return memo[is][it];
+//        }
+//        int res = 0;
+//        for (int i = is; i < s.length(); i++) {
+//            if (s.charAt(i) == t.charAt(it)) {
+//                res += dfs(i + 1, it + 1);
+//            }
+//        }
+//        return memo[is][it] = res;
+//    }
 
 //    public int numDistinct(String s, String t) {
 //        int[][] dp = new int[t.length() + 1][s.length() + 1];

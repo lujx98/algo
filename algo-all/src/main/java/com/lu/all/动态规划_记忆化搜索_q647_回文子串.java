@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-11-27
  */
-public class 记忆化搜索_动态规划_q647_回文子串 {
+public class 动态规划_记忆化搜索_q647_回文子串 {
 
     @Test
     public void test() {

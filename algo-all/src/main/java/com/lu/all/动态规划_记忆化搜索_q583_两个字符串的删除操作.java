@@ -1,21 +1,41 @@
-package com.lu.dmsxl.dp;
+package com.lu.all;
+
+import java.util.Arrays;
 
 /**
  * @author sheldon
  * @date 2022-11-26
  */
-public class DP_49_q583_0_MinDistance {
+public class 动态规划_记忆化搜索_q583_两个字符串的删除操作 {
 
+    private String word1, word2;
     private int[][] memo;
 
     public int minDistance(String word1, String word2) {
-
-
-        return 0;
+        this.word1 = word1;
+        this.word2 = word2;
+        this.memo = new int[word1.length()][word2.length()];
+        for (int[] ints : memo) {
+            Arrays.fill(ints, -1);
+        }
+        int dfs = dfs(0, 0);
+        return word1.length() + word2.length() - 2 * dfs;
     }
 
-    private int dfs(int head, int tail) {
-        return 0;
+    private int dfs(int index1, int index2) {
+        if (index1 == word1.length() || index2 == word2.length()) {
+            return 0;
+        }
+        if (memo[index1][index2] != -1) {
+            return memo[index1][index2];
+        }
+        int ans = 0;
+        if (word1.charAt(index1) == word2.charAt(index2)) {
+            ans = Math.max(ans, dfs(index1 + 1, index2 + 1) + 1);
+        }
+        ans = Math.max(ans, dfs(index1 + 1, index2));
+        ans = Math.max(ans, dfs(index1, index2 + 1));
+        return memo[index1][index2] = ans;
     }
 
 //    public int minDistance1(String word1, String word2) {

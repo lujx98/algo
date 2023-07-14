@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-04-02
  */
-public class 记忆化搜索_q1039_多边形三角剖分的最低得分 {
+public class 动态规划_记忆化搜索_q1039_多边形三角剖分的最低得分 {
 
     @Test
     public void test() {

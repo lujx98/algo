@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-11-27
  */
-public class 记忆化搜索_q516_最长回文子序列 {
+public class 动态规划_记忆化搜索_q516_最长回文子序列 {
 
     //https://zhuanlan.zhihu.com/p/509207705
     @Test

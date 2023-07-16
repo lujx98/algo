@@ -1,7 +1,5 @@
 package com.lu.all;
 
-import com.sun.javafx.iio.gif.GIFImageLoaderFactory;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 import org.junit.Test;
 
 import java.io.*;

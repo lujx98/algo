@@ -1,2 +1,0 @@
-Main-Class: com.lu.DiscardServer
-Class-Path: ./lib/netty-all-4.1.31.Final.jar

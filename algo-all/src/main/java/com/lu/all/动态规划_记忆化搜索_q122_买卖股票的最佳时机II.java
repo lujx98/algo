@@ -1,4 +1,4 @@
-package com.lu.dmsxl.dp;
+package com.lu.all;
 
 import org.junit.Test;
 import sun.text.resources.th.FormatData_th;

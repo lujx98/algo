@@ -1,4 +1,4 @@
-package com.lu.dmsxl.dp;
+package com.lu.all;
 
 import java.util.Arrays;
 

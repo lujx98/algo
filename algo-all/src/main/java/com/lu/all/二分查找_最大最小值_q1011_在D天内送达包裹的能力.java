@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-06-12
  */
-public class 二分查找_枚举答案_q1011_在D天内送达包裹的能力 {
+public class 二分查找_最大最小值_q1011_在D天内送达包裹的能力 {
 
     @Test
     public void test() {

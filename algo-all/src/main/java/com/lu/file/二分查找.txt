@@ -4,6 +4,7 @@ while (left < right) {
     if (check(mid)) {
         left = mid + 1;
     } else {
+        //当mid为边界值会进来这里
         right = mid;
     }
 }

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-06-01
  */
-public class 二分查找_q2517_礼盒的最大甜蜜度 {
+public class 二分查找_最大最小值_q2517_礼盒的最大甜蜜度 {
 
     @Test
     public void test() {

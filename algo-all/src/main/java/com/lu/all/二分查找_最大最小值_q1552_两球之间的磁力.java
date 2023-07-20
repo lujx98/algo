@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-12-20
  */
-public class 二分查找_q1552_两球之间的磁力 {
+public class 二分查找_最大最小值_q1552_两球之间的磁力 {
 
     @Test
     public void test() {

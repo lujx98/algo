@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-12-20
  */
-public class 二分查找_q1760_袋子里最少数目的球 {
+public class 二分查找_最大最小值_q1760_袋子里最少数目的球 {
 
     @Test
     public void test() {

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-06-27
  */
-public class q1186 {
+public class 动态规划_子数组_记忆化搜索_q1186_删除一次得到子数组最大和 {
 
     @Test
     public void test() {
@@ -24,34 +24,36 @@ public class q1186 {
         System.out.println(s);
     }
 
+
     private int[] arr;
     private int[][] memo;
 
     public int maximumSum(int[] arr) {
         this.arr = arr;
         this.memo = new int[arr.length][2];
-        int res = Integer.MIN_VALUE;
-        for (int[] ints : memo) {
-            Arrays.fill(ints, Integer.MIN_VALUE);
+        for (int[] ints : this.memo) {
+            Arrays.fill(ints, -1);
         }
+        int res = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            res = Math.max(Math.max(dfs(0, 1), res), dfs(0, 0));
+            res = Math.max(res, dfs(i, 0));
         }
         return res;
     }
 
-    private int dfs(int i, int j) {
-        if (i > arr.length - 1) {
-            return Integer.MIN_VALUE;
+    private int dfs(int i, int deled) {
+        if (i == 0) {
+            return arr[0];
         }
-        if (memo[i][j] != Integer.MIN_VALUE) {
-            return memo[i][j];
+        if (memo[i][deled] != -1) {
+            return memo[i][deled];
         }
-        if (j == 0) {
-            return 0;
-        } else {
-            return memo[i][j] = Math.max(dfs(i + 1, 1) + arr[i], dfs(i + 1, 0));
+        int res = arr[i];
+        res = Math.max(res, arr[i] + dfs(i - 1, deled));
+        if (arr[i] < 0 && deled == 0) {
+            res = Math.max(res, dfs(i - 1, 1));
         }
+        return memo[i][deled] = res;
     }
 
 }

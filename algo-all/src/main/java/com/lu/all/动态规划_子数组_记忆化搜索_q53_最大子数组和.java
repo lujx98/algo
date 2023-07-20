@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-03-19
  */
-public class 动态规划_记忆化搜索_q53_最大子数组和 {
+public class 动态规划_子数组_记忆化搜索_q53_最大子数组和 {
 
     @Test
     public void test() {

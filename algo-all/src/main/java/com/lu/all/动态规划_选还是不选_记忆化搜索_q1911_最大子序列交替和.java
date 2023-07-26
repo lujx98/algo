@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-07-11
  */
-public class 动态规划_选还是不选_超时_记忆化搜索_q1911_最大子序列交替和 {
+public class 动态规划_选还是不选_记忆化搜索_q1911_最大子序列交替和 {
 
     @Test
     public void test() throws IOException {

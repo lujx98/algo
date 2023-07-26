@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-11-26
  */
-public class 动态规划_选还是不选_超时_记忆化搜索_q115_不同的子序列 {
+public class 动态规划_选还是不选_记忆化搜索_q115_不同的子序列 {
 
     @Test
     public void test() {

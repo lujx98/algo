@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
  * @author sheldon
  * @date 2023-07-02
  */
-public class 双指针_滑动窗口_堆q6911_不间断子数组 {
+public class 滑动窗口_最值滑动窗口_堆_q2762_不间断子数组 {
 
     private PriorityQueue<Integer> min = new PriorityQueue<>(new Comparator<Integer>() {
         @Override

@@ -10,7 +10,7 @@ import java.util.*;
  * @author sheldon
  * @date 2023-05-14
  */
-public class 贪心_堆_q1054_距离相等的条形码 {
+public class 贪心_堆_交错排列_q1054_距离相等的条形码 {
 
     @Test
     public void test() {

@@ -1,4 +1,4 @@
-package com.lu.dmsxl.dp;
+package com.lu.all;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2022-05-31
  */
-public class DP_q63_2_UniquePathsWithObstacles {
+public class 动态规划_线性dp_记忆化搜索_q63_不同路径II {
     @Test
     public void test() {
         System.out.println(uniquePaths1(new int[][]{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}));

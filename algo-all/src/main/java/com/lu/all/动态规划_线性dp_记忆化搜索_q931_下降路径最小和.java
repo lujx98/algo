@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-07-13
  */
-public class 动态规划_记忆化搜索_q931_下降路径最小和 {
+public class 动态规划_线性dp_记忆化搜索_q931_下降路径最小和 {
 
     @Test
     public void test() {

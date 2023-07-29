@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-05-31
  */
-public class 动态规划_记忆化搜索_q62_不同路径 {
+public class 动态规划_线性dp_记忆化搜索_q62_不同路径 {
 
     @Test
     public void test() {

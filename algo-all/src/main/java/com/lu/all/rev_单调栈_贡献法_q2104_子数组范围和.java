@@ -10,9 +10,10 @@ import java.util.Deque;
 public class rev_单调栈_贡献法_q2104_子数组范围和 {
 
     public long subArrayRanges(int[] nums) {
-        int[] leftMaxCon = new int[nums.length];
+        int length = nums.length;
+        int[] leftMaxCon = new int[length];
         Deque<Integer> deque = new ArrayDeque<>();
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < length; i++) {
             while (!deque.isEmpty() && nums[deque.peek()] <= nums[i]) {
                 deque.pop();
             }
@@ -24,21 +25,21 @@ public class rev_单调栈_贡献法_q2104_子数组范围和 {
             deque.push(i);
         }
         deque.clear();
-        int[] rightMaxCon = new int[nums.length];
-        for (int i = nums.length - 1; i >= 0; i--) {
+        int[] rightMaxCon = new int[length];
+        for (int i = length - 1; i >= 0; i--) {
             while (!deque.isEmpty() && nums[deque.peek()] <= nums[i]) {
                 deque.pop();
             }
             if (deque.isEmpty()) {
-                rightMaxCon[i] = -1;
+                rightMaxCon[i] = length;
             } else {
                 rightMaxCon[i] = deque.peek();
             }
             deque.push(i);
         }
         long res = 0;
-        
-        
+
+
         return res;
     }
 

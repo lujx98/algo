@@ -1,14 +1,27 @@
-package com.lu.dmsxl.twopointer;
+package com.lu.all;
 
 import com.lu.structure.ListNode;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 /**
  * @author sheldon
  * @date 2022-10-27
  */
-public class Two_q142_0_DetectCycle {
+public class 模拟_q142_环形链表II {
+
+    public ListNode detectCycle1(ListNode head) {
+        HashSet<ListNode> objects = new HashSet<>();
+        while (head.next != null) {
+            if (objects.contains(head)) {
+                return head;
+            }
+            objects.add(head);
+            head = head.next;
+        }
+        return null;
+    }
 
     public ListNode detectCycle(ListNode head) {
         if (head == null) {

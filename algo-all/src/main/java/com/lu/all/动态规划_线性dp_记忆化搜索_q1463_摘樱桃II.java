@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-07-29
  */
-public class 动态规划_路径dp_记忆化搜索_q1463_摘樱桃II {
+public class 动态规划_线性dp_记忆化搜索_q1463_摘樱桃II {
 
     @Test
     public void test() {

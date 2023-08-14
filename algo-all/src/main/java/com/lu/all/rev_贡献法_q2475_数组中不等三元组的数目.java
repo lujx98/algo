@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author sheldon
  * @date 2023-06-13
  */
-public class rev_q2475 {
+public class rev_贡献法_q2475_数组中不等三元组的数目 {
 
     @Test
     public void test() {

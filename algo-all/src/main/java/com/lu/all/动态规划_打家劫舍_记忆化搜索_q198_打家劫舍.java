@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-10-03
  */
-public class 动态规划_记忆化搜索_q198_打家劫舍 {
+public class 动态规划_打家劫舍_记忆化搜索_q198_打家劫舍 {
 
     @Test
     public void test() {

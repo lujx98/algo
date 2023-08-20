@@ -2,6 +2,11 @@ package com.lu.utils;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author sheldon
  * @date 2023-01-20
@@ -37,6 +42,15 @@ public class ArrayUtils {
             ints1[i] = ints;
         }
         return ints1;
+    }
+
+    public static List<List<Integer>> makeIntegerListByString(String arrayString) {
+        int[][] ints1 = makeIntArraysByString(arrayString);
+        List<List<Integer>> objects = new ArrayList<>();
+        for (int[] ints : ints1) {
+            objects.add(Arrays.stream(ints).boxed().collect(Collectors.toList()));
+        }
+        return objects;
     }
 
 }

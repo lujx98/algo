@@ -14,7 +14,7 @@ public class rev_二分查找_差分数组_前缀和_q2528_最大化城市的最
 
     @Test
     public void test() {
-        int[] input = IOUtils.input();
+        int[] input = IOUtils.inputInt();
         System.out.println(maxPower(input, 18088, 336238182));
     }
 

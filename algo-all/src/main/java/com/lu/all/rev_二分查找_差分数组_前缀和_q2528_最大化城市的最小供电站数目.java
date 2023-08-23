@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-08-22
  */
-public class 二分查找_差分数组_前缀和_q2528_最大化城市的最小供电站数目 {
+public class rev_二分查找_差分数组_前缀和_q2528_最大化城市的最小供电站数目 {
 
     @Test
     public void test() {

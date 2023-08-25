@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-07-26
  */
-public class 动态规划_选还是不选_记忆化搜索_q2787_将一个数字表示成幂的和的方案数 {
+public class 动态规划_线性dp_选还是不选_记忆化搜索_q2787_将一个数字表示成幂的和的方案数 {
 
     @Test
     public void test() {

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-10-04
  */
-public class 动态规划_选还是不选_记忆化搜索_q300_最长递增子序列 {
+public class 动态规划_线性dp_选还是不选_记忆化搜索_q300_最长递增子序列 {
 
     @Test
     public void test() {

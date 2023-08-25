@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2023-07-26
  */
-public class 动态规划_选还是不选_记忆化搜索_q2786_访问数组中的位置使分数最大 {
+public class 动态规划_线性dp_选还是不选_记忆化搜索_q2786_访问数组中的位置使分数最大 {
 
     private int x;
     private int[] nums;

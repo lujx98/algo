@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * @author sheldon
  * @date 2023-06-19
  */
-public class 动态规划_选还是不选_状态压缩_记忆化搜索_q1262_可被三整除的最大和 {
+public class 动态规划_线性dp_选还是不选_状态压缩_记忆化搜索_q1262_可被三整除的最大和 {
 
     @Test
     public void test() {

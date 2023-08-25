@@ -10,7 +10,7 @@ import java.util.Map;
  * @author sheldon
  * @date 2023-06-21
  */
-public class 动态规划_选还是不选_记忆化搜索_q2742_给墙壁刷油漆 {
+public class 动态规划_线性dp_选还是不选_记忆化搜索_q2742_给墙壁刷油漆 {
 
     @Test
     public void test() {

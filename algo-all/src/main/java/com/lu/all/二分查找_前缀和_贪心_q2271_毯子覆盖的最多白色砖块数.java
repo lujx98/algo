@@ -10,7 +10,7 @@ import java.util.Comparator;
  * @author sheldon
  * @date 2023-08-23
  */
-public class 二分查找_前缀和_贪心_q2771_毯子覆盖的最多白色砖块数 {
+public class 二分查找_前缀和_贪心_q2271_毯子覆盖的最多白色砖块数 {
 
     @Test
     public void test() {

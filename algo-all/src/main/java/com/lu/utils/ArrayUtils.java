@@ -19,6 +19,9 @@ public class ArrayUtils {
     }
 
     public static int[][] makeIntArraysByString(String arrayString) {
+        if (arrayString.equals("[]")) {
+            return new int[][]{};
+        }
         //[[0,5],[1,2],[0,2],[0,5],[1,3]]
         String substring = arrayString.substring(1, arrayString.length() - 1);
         String[] split1 = substring.split("],\\[");

@@ -1,4 +1,4 @@
-package com.lu.all;
+package com.lu.contest;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-09-02
  */
-public class c2 {
+public class c3 {
 
     @Test
     public void test() {

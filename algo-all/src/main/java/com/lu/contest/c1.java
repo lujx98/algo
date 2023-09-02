@@ -1,10 +1,10 @@
-package com.lu.all;
+package com.lu.contest;
 
 import org.junit.Test;
 
 /**
  * @author sheldon
- * @date 2023-08-27
+ * @date 2023-09-02
  */
 public class c1 {
 

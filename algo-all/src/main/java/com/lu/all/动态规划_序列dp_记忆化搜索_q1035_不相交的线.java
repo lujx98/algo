@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author sheldon
  * @date 2022-10-04
  */
-public class 动态规划_记忆化搜索_q1035_不相交的线 {
+public class 动态规划_序列dp_记忆化搜索_q1035_不相交的线 {
 
     @Test
     public void test() {

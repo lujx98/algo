@@ -4,7 +4,7 @@ package com.lu.all;
  * @author sheldon
  * @date 2022-11-26
  */
-public class 双指针_动态规划_q392_判断子序列 {
+public class 动态规划_序列dp_双指针_q392_判断子序列 {
 
     public boolean isSubsequence(String s, String t) {
         int[][] dp = new int[s.length() + 1][t.length() + 1];

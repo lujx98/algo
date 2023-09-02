@@ -1,16 +1,14 @@
 package com.lu.all;
 
-import com.lu.all.图论_并查集_DFS_q1971;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * @author sheldon
  * @date 2022-10-04
  */
-public class 动态规划_记忆化搜索_q1143_最长公共子序列 {
+public class 动态规划_序列dp_记忆化搜索_q1143_最长公共子序列 {
 
     @Test
     public void test() {

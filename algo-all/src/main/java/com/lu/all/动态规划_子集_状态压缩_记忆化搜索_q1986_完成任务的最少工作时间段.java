@@ -4,7 +4,7 @@ package com.lu.all;
  * @author sheldon
  * @date 2023-09-02
  */
-public class 动态规划_子集_状态压缩_动态规划_q1986_完成任务的最少工作时间段 {
+public class 动态规划_子集_状态压缩_记忆化搜索_q1986_完成任务的最少工作时间段 {
 
     private int sessionTime;
     private int[] sum;

@@ -3,7 +3,7 @@
 
 target
 **/.idea
-
+venv
 
 # Log file
 *.log
@@ -27,3 +27,5 @@ target
 hs_err_pid*
 
 *.iml
+
+

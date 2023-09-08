@@ -15,5 +15,5 @@ class Solution:
             res+=1
             right +=1
         return res
-    
-Solution().removeDuplicates([1,1,1,2,2,3])
+
+print(Solution().removeDuplicates([1, 1, 1, 2, 2, 3]))

@@ -1,0 +1,57 @@
+package com.lu.all;
+
+import com.lu.utils.ArrayUtils;
+import org.junit.Test;
+
+import java.util.*;
+
+/**
+ * @author sheldon
+ * @date 2023-09-09
+ */
+public class 拓扑排序_入度出度_q207_课程表 {
+
+    @Test
+    public void test(){
+        canFinish(2, ArrayUtils.makeIntArraysByString("[[1,0],[0,1]]"));
+    }
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
+        int[] indegrees = new int[numCourses];
+        ArrayDeque<Integer> queue = new ArrayDeque<>();
+
+        for (int i = 0; i < prerequisites.length; i++) {
+            int[] cur = prerequisites[i];
+            indegrees[cur[0]]++;
+            if (map.containsKey(cur[1])) {
+                map.get(cur[1]).add(cur[0]);
+            } else {
+                map.put(cur[1], new ArrayList<>(Collections.singletonList(cur[0])));
+            }
+        }
+
+        for (int i = 0; i < indegrees.length; i++) {
+            if (indegrees[i] == 0) {
+                queue.offer(i);
+                numCourses--;
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            Integer poll = queue.poll();
+            List<Integer> integers = map.get(poll);
+            if (integers != null) {
+                for (Integer integer : integers) {
+                    if (--indegrees[integer] == 0) {
+                        queue.offer(integer);
+                        numCourses--;
+                    }
+                }
+            }
+        }
+
+        return numCourses == 0;
+    }
+
+}

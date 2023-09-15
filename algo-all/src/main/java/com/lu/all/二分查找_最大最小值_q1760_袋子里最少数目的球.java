@@ -12,29 +12,29 @@ public class 二分查找_最大最小值_q1760_袋子里最少数目的球 {
 
     @Test
     public void test() {
-        int start = Integer.MAX_VALUE - 1;
-        int end = Integer.MAX_VALUE - 1;
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println((start + end) >>> 1);
-        System.out.println(start + (end - start) / 2);
+        System.out.println(minimumSize(new int[]{9}, 2));
     }
 
     public int minimumSize(int[] nums, int maxOperations) {
         int left = 1, right = Arrays.stream(nums).max().getAsInt();
-        int res = 0;
         while (left < right) {
-            int a = left + (right - left) / 2;
-            if (can(nums, a) <= maxOperations) {
-                left = a;
+            int mid = left + (right - left) / 2;
+            if (check(nums, mid, maxOperations)) {
+                right = mid;
             } else {
-                right = a;
+                left = mid + 1;
             }
         }
-        return res;
+        return left;
     }
 
-    private int can(int[] nums, int a) {
-        return 1;
+    private boolean check(int[] nums, int a, int maxOperations) {
+        for (int num : nums) {
+            if (num > a) {
+                maxOperations -= (((num + a - 1) / a) - 1);
+            }
+        }
+        return maxOperations >= 0;
     }
 
 //    public int minimumSize(int[] nums, int maxOperations) {

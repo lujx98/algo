@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author sheldon
  * @date 2023-09-02
  */
-public class 动态规划_子集_状态压缩_记忆化搜索_q2305_公平分发饼干 {
+public class 动态规划_子集枚举_状态压缩_记忆化搜索_q2305_公平分发饼干 {
 
     @Test
     public void test() {

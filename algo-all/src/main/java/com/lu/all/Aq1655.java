@@ -8,7 +8,7 @@ import java.util.*;
  * @author sheldon
  * @date 2023-09-05
  */
-public class A_q1655 {
+public class Aq1655 {
 
     @Test
     public void test() {

@@ -4,7 +4,7 @@ package com.lu.all;
  * @author sheldon
  * @date 2023-08-18
  */
-public class A_q2407 {
+public class Aq2407 {
 
     private int k;
     private int[] nums;

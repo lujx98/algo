@@ -1,5 +1,7 @@
 from typing import List
 
+from passlib import *
+
 
 class Solution:
     def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[

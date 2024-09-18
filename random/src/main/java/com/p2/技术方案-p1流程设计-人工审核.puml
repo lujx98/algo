@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+risk_approval -> antifraud_audit: 交易单人工审核回调(/credit/anti_fraud/audit/mannulApproveCallBack)
+
+activate antifraud_audit
+antifraud_audit -> antifraud_audit: 获取相应审核单
+
+alt 非灰度订单
+autonumber 3
+antifraud_audit -> antifraud_audit: 校验订单状态
+antifraud_audit --> antifraud_audit: 上报流水MQ
+alt 拒绝
+    autonumber 4.1
+    antifraud_audit -> antifraud_audit: 更新交易单子订单状态
+else 通过
+    autonumber 5.1
+    antifraud_audit -> indonesia_server_quota_data_java:调用接口通知额度扣减(/quota/data/pay/orderListPayChange)
+    antifraud_audit -> antifraud_audit:返回额度扣减信息
+    antifraud_audit -> antifraud_audit:更新订单状态为二次扣减额度
+    antifraud_audit -> antifraud_audit: 校验额度
+    antifraud_audit -> autoaudit_water:上报交易记录流水
+end
+autonumber 6
+else 灰度订单
+autonumber 3
+
+antifraud_audit -> antifraud_audit: 校验灰度订单状态
+antifraud_audit --> antifraud_audit: 上报流水MQ
+alt 拒绝
+    autonumber 4.1
+    antifraud_audit -> antifraud_audit: 更新交易单子订单状态
+else 通过
+    autonumber 5.1
+    ' 需要确认
+    antifraud_audit -> indonesia_server_quota_data_java:调用接口通知额度扣减(/quota/data/pay/orderListPayChange)
+    antifraud_audit -> antifraud_audit:返回额度扣减信息
+    antifraud_audit -> antifraud_audit:更新订单状态为二次扣减额度
+    antifraud_audit -> antifraud_audit: 校验额度
+    antifraud_audit -> autoaudit_water:上报交易记录流水
+end
+autonumber 6
+
+
+end
+
+antifraud_audit -> antifraud_audit: 更新交易单状态
+
+activate rc_handler
+antifraud_audit -> rc_handler: 调用接口通知业务
+rc_handler -> antifraud_audit: 返回
+deactivate rc_handler
+
+antifraud_audit --> antifraud_audit:发送交易状态变更mq
+antifraud_audit --> antifraud_audit:发送风控订单更新mq
+antifraud_audit -> risk_approval: response
+deactivate antifraud_audit
+
+@enduml

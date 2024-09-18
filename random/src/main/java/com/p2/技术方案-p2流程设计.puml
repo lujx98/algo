@@ -7,102 +7,101 @@ autonumber
 group 业务暂时不调
 autonumber 1.0
 业务侧 -> rc_tunnel:用户提交前触发调用风控
-rc_tunnel -> 风控编排层:提交风控引擎
-alt 灰度判断:风控中台陪跑 + 旧规则引擎
+rc_tunnel -> rc_tunnel:用户灰度逻辑判断
+alt 灰度判断:走风控中台
     autonumber 1.1
-    风控编排层 -> 风控中台:
-    风控中台 -> 风控编排层:
-    风控编排层 -> 旧规则引擎:
-    旧规则引擎 -> 风控编排层:
-else 走旧规则引擎
+    rc_tunnel -> 风控中台:提交到风控中台
+    风控中台 -> rc_tunnel:返回结果
+    rc_tunnel -> autoaudit_water:上报订单鉴权流水
+else 旧流程
     autonumber 1.1
-    风控编排层 -> 旧规则引擎:
-    旧规则引擎 -> 风控编排层:
-else 走风控中台
-    autonumber 1.1
-    风控编排层 -> 风控中台:
-    风控中台 -> 风控编排层:
+    rc_tunnel -> 风控编排层:走旧流程
+    风控编排层 -> rc_tunnel: 返回结果
 end
-风控编排层 -> rc_tunnel: 返回结果
 rc_tunnel -> 业务侧: 返回结果
 end
+
+
+
+
 
 autonumber 2.0
 业务侧 -> rc_tunnel: 交易提交审核接口
 rc_tunnel -> rc_tunnel : 是否灰度逻辑判断
-rc_tunnel -> 风控编排层: 提交一审/规则前校验
-alt 灰度用户
+rc_tunnel -> rc_tunnel:字段相关预计算
+rc_tunnel -> rc_tunnel:校验订单状态
+rc_tunnel --> indonesia_server_quota_data_java:交易单信息上报给额度服务(/quota/data/tradeQuotaOrder/orderTradeQuota)
+rc_tunnel --> ruleengine_access_server:上报订单信息(/ruleengine/access/antiFraudAccess/uploadData)
+
+
+
+
+'一审逻辑
+alt 灰度判断:走风控中台
     autonumber 2.1
-    风控编排层 -> 风控中台:单提交
-    风控中台 -> 风控编排层:结果返回
-else 非灰度用户
+    rc_tunnel -> 风控中台:提交一审
+    风控中台 -> rc_tunnel:返回结果
+    rc_tunnel -> autoaudit_water:上报订单鉴权流水
+else 旧流程
     autonumber 2.1
-    group 陪跑
-        风控编排层 -> 旧规则引擎:走旧流程
-        旧规则引擎 -> 风控编排层:结果返回
-    end
-    风控编排层 -> 风控中台:提交中台
-    风控中台 -> 风控编排层:结果返回
+    rc_tunnel -> 旧规则引擎:提交一审
+    旧规则引擎 -> rc_tunnel: 返回结果
 end
-风控编排层 -> rc_tunnel:返回鉴权信息
 
 
 
+
+'交易鉴权
 autonumber 3.0
-rc_tunnel -> 风控编排层: 提交交易鉴权
-alt 灰度用户
+alt 灰度判断:走风控中台
     autonumber 3.1
-    风控编排层 -> 风控中台:单提交
-    风控中台 -> 风控编排层:结果返回
-else 非灰度用户
+    rc_tunnel -> 风控中台:提交交易鉴权
+    风控中台 -> rc_tunnel:结果返回
+    rc_tunnel -> autoaudit_water:保存订单鉴权流水
+else 旧流程
     autonumber 3.1
-    group 陪跑
-        风控编排层 -> 旧规则引擎:走旧流程
-        旧规则引擎 -> 风控编排层:结果返回
-    end
-    风控编排层 -> 风控中台:提交中台
-    风控中台 -> 风控编排层:结果返回
+    rc_tunnel -> 旧规则引擎:提交交易鉴权
+    旧规则引擎 -> rc_tunnel:结果返回
 end
-风控编排层 -> rc_tunnel:返回鉴权信息
 
+
+
+
+'二审逻辑
 autonumber 4.0
-rc_tunnel -> 风控编排层: 提交二审
-alt 灰度用户
+alt 灰度判断:走风控中台
     autonumber 4.1
-    风控编排层 -> 风控中台:单提交
-    风控中台 -> 风控编排层:结果返回
-else 非灰度用户
+    rc_tunnel -> 风控中台:交易审核提交中台
+    风控中台 -> rc_tunnel:结果返回
+    rc_tunnel -> 风控编排层:审核单信息维护
+    rc_tunnel -> autoaudit_water:上报订单审核流水(额度不足、审核通过、审核拒绝)
+    rc_tunnel --> rc_tunnel:发送交易状态变更mq
+else 旧流程
     autonumber 4.1
-    group 陪跑
-        风控编排层 -> 旧规则引擎:走旧流程
-        旧规则引擎 -> 风控编排层:结果返回
-    end
-    风控编排层 -> 风控中台:提交中台
-    风控中台 -> 风控编排层:结果返回
+    rc_tunnel -> 旧规则引擎:交易审核走旧流程
+    旧规则引擎 -> rc_tunnel:结果返回
 end
-风控编排层 -> rc_tunnel:返回结果信息
 rc_tunnel -> 业务侧: 返回审核结果(审核中/通过/拒绝)
 
 
-autonumber
-业务侧 -> rc_tunnel: 查询交易单审核结果
-rc_tunnel -> 风控编排层:查询风控交易信息
-风控编排层 -> 风控编排层:转化交易状态，判断状态
-alt 拒绝/关单
-    风控编排层 -> 风控编排层:判断是否是人工审核
-    alt 是
-        风控编排层 -> risk_approval:查询人工审核结果(/manual/query/selectByUniqueKey)
-        risk_approval -> 风控编排层:返回人工审核结果
-        风控编排层 -> 风控编排层:设置人工审核拒绝码
-    else 不是
-        风控编排层 -> autoaudit_water:查询风控审核流水(/autoaudit/water/queryTradeRcByNode)
-        autoaudit_water -> 风控编排层:返回风控审核流水
-        风控编排层 -> 风控编排层:设置自动审核拒绝码
+
+
+
+
+autonumber 1
+业务侧 -> rc_tunnel: 查询交易单审核结果/rc_tunnel延迟队列查询结果
+rc_tunnel -> autoaudit_water :查询审核流水
+alt 无终态记录
+    alt 灰度用户
+        rc_tunnel -> 风控中台:查询风控交易信息
+        '人工审核流水 怎么样操作？
+        alt 通过/拒绝
+            rc_tunnel -> autoaudit_water:上报订单审核流水(额度不足、审核通过、审核拒绝)
+            rc_tunnel -> 风控编排层:审核单信息维护
+        end
+    else 非灰度用户
+        rc_tunnel -> 风控编排层 : 旧流程
     end
-    风控编排层 -> rc_tunnel:返回交易单审核结果
-    rc_tunnel -> 业务侧:返回交易单审核结果
-else 通过/拒绝/审核中
-    风控编排层 -> rc_tunnel:返回交易单审核结果
-    rc_tunnel -> 业务侧:返回交易单审核结果
 end
+rc_tunnel -> 业务侧:返回交易单审核结果
 @enduml

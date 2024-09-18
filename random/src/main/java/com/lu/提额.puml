@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+
+
+autonumber 1.0
+        activate 具体业务方
+        具体业务方 ->具体业务方:跑批、活动提额、补资料提额
+        activate 用户模块module_user
+        具体业务方 -> 用户模块module_user : 调用提额接口
+        用户模块module_user -> 用户模块module_user:额度合法性校验、业务幂等校验
+        用户模块module_user -> 用户模块module_user:创建用户额度信息表记录
+        用户模块module_user -> 用户模块module_user:更新用户表用户授信等级
+        用户模块module_user -> 用户模块module_user:新增授信变更历史表记录
+        用户模块module_user -> 具体业务方 :
+        deactivate 用户模块module_user
+        deactivate 具体业务方
+@enduml

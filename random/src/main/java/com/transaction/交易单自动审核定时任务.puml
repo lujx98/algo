@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+antifraud_audit -> antifraud_audit: 自动审核补单定时任务(AutoAuditOrderFeedJob.java)
+antifraud_audit -> antifraud_audit: 获取补单配置(rule.antifraud.audit)
+antifraud_audit -> antifraud_audit: 根据配置查询需要补单的交易单
+antifraud_audit -> rc_handler: 查询业务交易单信息
+rc_handler -> antifraud_audit: 返回交易单信息
+antifraud_audit -> antifraud_audit: 校验状态
+alt 关单
+antifraud_audit -> antifraud_audit: 跳过
+else 自动审核中
+antifraud_audit -> antifraud_audit: 交易自动审核(交易规则自动审核)
+else 转人工失败
+antifraud_audit -> risk_approval: 转人工(/manual/order/add)
+risk_approval -> antifraud_audit: 返回转人工结果
+else 已提交人工审核
+antifraud_audit -> risk_approval: 查询人工审核信息(/manual/query/selectByUniqueKey)
+risk_approval -> antifraud_audit: 返回人工审核信息
+antifraud_audit -> antifraud_audit: 校验人工审核状态
+    alt 人工审核终态
+    autonumber 13.1
+    antifraud_audit -> antifraud_audit:调用人工审核回调接口(见交易单人工审核回调)
+    end
+autonumber 14
+antifraud_audit -> antifraud_audit:结束定时任务
+end
+
+@enduml

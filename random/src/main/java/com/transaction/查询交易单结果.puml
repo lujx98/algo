@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+business -> rc_gate: 查询交易单审核结果(/transaction-order/query)
+rc_gate -> antifraud_audit:查询风控交易信息(/credit/anti_fraud/audit/order/autoaudit/queryOrderQutoaudit)
+antifraud_audit -> rc_gate:返回风控交易信息
+rc_gate -> rc_gate:转化交易状态，判断状态
+autonumber 5
+alt 拒绝或关单
+    autonumber 5.1
+    rc_gate -> rc_gate:判断是否是人工审核
+    alt 是
+    rc_gate -> risk_approval:查询人工审核结果(/manual/query/selectByUniqueKey)
+    risk_approval -> rc_gate:返回人工审核结果
+    rc_gate -> rc_gate:设置人工审核拒绝码
+    else 不是
+    rc_gate -> autoaudit_water:查询风控审核流水(/autoaudit/water/queryTradeRcByNode)
+    autoaudit_water -> rc_gate:返回风控审核流水
+    rc_gate -> rc_gate:设置自动审核拒绝码
+    end
+end
+rc_gate -> business:返回交易单审核结果
+
+@enduml

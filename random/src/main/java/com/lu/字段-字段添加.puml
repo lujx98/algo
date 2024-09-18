@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+activate webui
+webui -> risk_rule :管理员发起请求
+activate risk_rule
+risk_rule -> af_field_server :
+activate af_field_server
+af_field_server->af_field_server:字段请求合法性校验
+af_field_server->af_field_server:字段查重
+af_field_server->af_field_server:填充关联方法信息
+af_field_server->af_field_server:写入字段信息表
+af_field_server->af_field_server:插入字段操作流水
+af_field_server->af_field_server:广播字段变更通知(内存层面)
+af_field_server->af_field_server:广播字段变更通知(MQ)
+af_field_server->risk_rule:
+deactivate af_field_server
+risk_rule -> webui :
+deactivate risk_rule
+deactivate webui
+@enduml

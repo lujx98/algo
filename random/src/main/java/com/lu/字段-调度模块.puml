@@ -1,0 +1,61 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.0
+客户端 -> risk_rule: field request
+activate risk_rule
+risk_rule -> af_field_server
+
+activate af_field_server
+af_field_server -> af_field_server: 将乐信的字段转化为乐品对应的字段
+af_field_server -> af_field_server: 根据字段获取具体目标调用方法
+af_field_server -> af_field_server: 以调用方法为维度整合成一个或多个任务
+
+alt 自动映射方法
+    autonumber 2.0
+    af_field_server -> af_field_server: 根据方法配置获取对应接口类
+    af_field_server -> 对应服务实现: 拉取对应服务配置的接口
+    对应服务实现 -> 对应服务实现 : 字段计算
+    对应服务实现 -> af_field_server : 返回结果
+else 适配型方法
+    alt model前缀
+        autonumber 2.0
+        af_field_server -> af_field_server: 查询模型入参
+        af_field_server -> af_field_server: 递归调用字段查询接口
+        activate 模型服务
+        af_field_server -> 模型服务: 携带入参查询对应模型的对应接口
+        模型服务 -> 模型服务: 模型计算
+        模型服务 -> af_field_server:
+        deactivate 模型服务
+    else credit前缀
+        autonumber 2.0
+        activate server_credit_dataadapter_java
+        af_field_server -> server_credit_dataadapter_java: 调用对应模块获取参数
+        server_credit_dataadapter_java -> server_credit_dataadapter_java: 字段实现
+        server_credit_dataadapter_java -> af_field_server:
+        deactivate server_credit_dataadapter_java
+    else collection前缀
+        autonumber 2.0
+        activate server_risk_collection
+        af_field_server -> server_risk_collection: 调用对应模块获取参数
+        server_risk_collection -> server_risk_collection: 字段实现
+        server_risk_collection -> af_field_server:
+        deactivate server_risk_collection
+    else af_statistics前缀
+        autonumber 2.0
+        activate af_statistics_dataadapter_server
+        af_field_server -> af_statistics_dataadapter_server: 调用对应模块获取参数
+        af_statistics_dataadapter_server -> af_statistics_dataadapter_server: 字段实现
+        af_statistics_dataadapter_server -> af_field_server:
+        deactivate af_statistics_dataadapter_server
+end
+end
+
+autonumber 3.0
+
+af_field_server -> risk_rule: 将以方法维度的接口重新整合为字段维度
+deactivate af_field_server
+
+risk_rule -> 客户端: response
+deactivate risk_rule
+@enduml

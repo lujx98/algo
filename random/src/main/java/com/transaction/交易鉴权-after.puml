@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+business -> rc_tunnel: 交易鉴权api(/trade-order/audit-decision-query)
+rc_tunnel ->rc_tunnel : 是否灰度逻辑判断
+rc_tunnel -> 风控编排层:交易鉴权风控入口
+alt 灰度判断:风控中台陪跑 + 旧规则引擎
+    风控编排层 -> 风控中台:
+    风控编排层 -> 旧规则引擎:
+else 走旧规则引擎
+    风控编排层 -> 风控中台:
+else 走风控中台
+    风控编排层 -> 风控中台:
+end
+风控编排层 -> rc_tunnel:返回鉴权信息
+rc_tunnel -> business:返回是否需要活体检测
+
+@enduml

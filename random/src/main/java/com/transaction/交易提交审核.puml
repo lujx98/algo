@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+business -> rc_gate:交易预提交接口(/transaction-order/check-before-submit)
+rc_gate --> rc_handler:字段预计算(无需返回)
+rc_gate -> rc_gate:计算能否提交审核
+rc_gate -> business: 返回能否提交审核
+business -> rc_gate:交易提交审核接口(/transaction-order/audit)
+rc_gate -> rc_handler:调用afpi接口，失败重试3次
+rc_handler -> rc_gate:返回afpi结果
+rc_gate -> rc_gate:校验订单状态
+rc_gate --> indonesia_server_quota_data_java:交易单信息上报给额度服务(/quota/data/tradeQuotaOrder/orderTradeQuota)
+rc_gate --> ruleengine_access_server:上报订单信息(/ruleengine/access/antiFraudAccess/uploadData)
+ruleengine_access_server -> af_tradeorder_server:更新订单信息
+rc_gate -> ruleengine_slow_access_server:下单前规则(/ruleengine/slowaccess/tradeRiskPlatformDecision/purchOrderDecison)
+ruleengine_slow_access_server -> ruleengine_slow_access_server:订单过反欺诈
+ruleengine_slow_access_server -> ruleengine_decision_server:进行下单前决策(/anti_fraud/ruleengine/decision/makeDecision)
+ruleengine_decision_server -> ruleengine_slow_access_server:返回下单前决策结果
+ruleengine_slow_access_server -> autoaudit_water:保存订单鉴权流水
+ruleengine_slow_access_server -> rc_gate:返回下单前决策结果
+autonumber 18
+alt 拒绝
+autonumber 18.1
+rc_gate->business:返回拒绝
+else 通过
+rc_gate -> ruleengine_access_server:调用交易鉴权(具体见交易鉴权图)
+ruleengine_access_server -> rc_gate:返回交易鉴权决策结果和下一步场景
+rc_gate --> rc_gate:发送交易审核MQ(LEPIN_TRANSACTION_AUDIT_SUBMIT)
+rc_gate -> business:返回订单审核中
+end
+
+@enduml

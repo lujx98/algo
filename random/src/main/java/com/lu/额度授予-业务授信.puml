@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.0
+lepin_instalments -> 风控系统:授信提交
+风控系统 --> 风控系统:授信审核-见风控授信
+风控系统 -> lepin_instalments:返回调用结果
+====
+autonumber 2.0
+风控系统 -> lepin_instalments : 通知授信结果
+lepin_instalments -> 风控系统 : 查询授信结果
+风控系统 -> lepin_instalments : 返回结果与额度信息
+
+alt kredito渠道
+    lepin_instalments -> 用户模块module_user:创建额度
+
+    group 用户模块额度更新接口
+        用户模块module_user -> 用户模块module_user:额度前置校验
+        用户模块module_user -> 用户模块module_user:创建用户额度信息表记录
+        用户模块module_user -> 用户模块module_user:更新用户表用户授信等级
+        用户模块module_user -> 用户模块module_user:新增授信变更历史表记录
+    end
+
+    用户模块module_user -> lepin_instalments:创建额度
+else 非kredito渠道(如lazada)
+    lepin_instalments -> 账户体系模块:创建额度账户
+
+    group 账户体系
+        账户体系模块 -> 账户体系模块:前置校验:订单幂等、账户类型等
+        账户体系模块 -> 账户体系模块:保存增加账户余额流水记录
+        账户体系模块 -> 账户体系模块:更新账户余额
+        账户体系模块 -> 账户体系模块:额度变更广播
+    end
+
+    账户体系模块 -> lepin_instalments:
+end
+
+
+
+
+@enduml

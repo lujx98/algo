@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.0
+业务系统 -> rc_gate: 授信提交
+activate rc_gate
+activate rc_rule
+rc_gate --> rc_rule: 提交审核
+rc_rule --> rc_gate: 返回提交结果
+deactivate rc_rule
+rc_gate -> 业务系统: 返回
+deactivate rc_gate
+====
+autonumber 2.0
+业务系统 -> rc_gate: 查询授信结果
+activate rc_gate
+activate risk_data
+rc_gate -> risk_data: 查询RcOrder、获取授信结果
+risk_data -> rc_gate
+deactivate risk_data
+
+rc_gate -> risk_data: 如果授信通过，请求额度信息
+activate risk_data
+risk_data -> risk_data: 查询用户额度账户总额度
+risk_data -> risk_data: 金额口径转化
+risk_data -> rc_gate:
+deactivate risk_data
+rc_gate -> 业务系统:
+deactivate rc_gate
+
+@enduml

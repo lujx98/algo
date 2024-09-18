@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+risk_rule -> rc_handler: request
+activate rc_handler
+rc_handler -> rc_handler: 查询业务信息，获取用户信息，封装上下文
+rc_handler -> rc_handler: 过滤缓存已有字段
+rc_handler -> 字段实现类: 调用字段对应实现类
+activate 字段实现类
+字段实现类 -> 字段实现类: 数据库查询、模型调用、外部数据供应商调用
+字段实现类 -> rc_handler: 结果返回
+deactivate 字段实现类
+rc_handler -> risk_rule: response
+deactivate rc_handler
+
+@enduml

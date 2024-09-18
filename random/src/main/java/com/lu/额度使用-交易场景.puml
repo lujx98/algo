@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+group 额度使用
+autonumber 1.0
+用户 -> 业务层:提交交易
+    activate 业务层
+alt kredito渠道
+    业务层 -> 用户模块module_user: 查询用户额度
+    用户模块module_user -> 业务层:
+    业务层 -> 业务层 : 实时计算用户已用额度，判断是否可以借款
+    业务层 -> 业务层 : 略
+else 非kredito渠道
+autonumber 1.1
+    activate 账户服务
+    业务层 ->账户服务 : 冻结对应用户额度账户额度
+    账户服务 -> 业务层:
+    deactivate 账户服务
+
+    activate 风控系统
+    业务层 ->风控系统:提交审核
+    风控系统 --> 业务层 : 授信结果通知
+    deactivate 风控系统
+
+    activate 账户服务
+    业务层 -> 账户服务:恢复或扣减用户对应订单冻结的额度
+    账户服务 -> 业务层:
+    deactivate 账户服务
+
+    业务层 -> 业务层 : 略
+
+end
+业务层 -> 用户:
+deactivate 业务层
+end
+
+
+
+@enduml

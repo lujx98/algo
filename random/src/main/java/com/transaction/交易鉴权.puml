@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+business -> rc_tunnel: 交易鉴权api(/trade-order/audit-decision-query)
+rc_tunnel -> 风控编排层:交易鉴权风控(/ruleengine/access/ruleengineTradeAuth/getDecision)
+风控编排层 -> ruleengine_decision_server:查询鉴权场景包含字段
+ruleengine_decision_server -> 风控编排层:返回鉴权字段
+风控编排层 -> af_field_ruleengine_proxy_server: 字段计算
+af_field_ruleengine_proxy_server -> 风控编排层:返回字段计算结果
+风控编排层 -> ruleengine_decision_server:进行鉴权决策
+ruleengine_decision_server -> 风控编排层:返回鉴权决策结果
+风控编排层 -> 风控编排层:校验-2异常字段
+风控编排层 -> autoaudit_water:保存订单鉴权流水
+风控编排层 --> 风控编排层:发送MQ状态变更
+风控编排层 -> rc_tunnel:返回鉴权信息
+rc_tunnel -> business:返回是否需要活体检测
+
+@enduml

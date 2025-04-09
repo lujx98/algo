@@ -12,7 +12,14 @@ public class Aq1655 {
 
     @Test
     public void test() {
-        System.out.println(canDistribute(new int[]{154,533,533,533,154,154,533,154,154}, new int[]{3,2,2,2}));
+        int min = 43;
+        int hrs = 2;
+        for (int i = 0; i < 10; i++) {
+            Date date = new Date(2024, 6, 23, hrs, min, 56);
+            System.out.println(date);
+            min = (min + 20) % 60;
+            hrs = (hrs + 8) % 24;
+        }
     }
 
     public boolean canDistribute(int[] nums, int[] quantity) {

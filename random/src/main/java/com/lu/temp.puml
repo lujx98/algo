@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+具体业务实现 -> 用户模块module_user: 业务调用额度变更方法(如跑批提额、冻结额度)
+用户模块module_user -> 用户模块module_user: 调额合法性确认
+用户模块module_user -> 用户模块module_user: 创建额度变更确认表记录
+用户模块module_user -> 用户模块module_user: 调整用户额度
+用户模块module_user -> 具体业务实现: Authentication Request
+
+
+
+@enduml
